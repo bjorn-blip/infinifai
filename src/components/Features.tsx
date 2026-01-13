@@ -34,8 +34,8 @@ export const Features = () => {
                                     </p>
                                 </CardContent>
                                 <CardFooter className="pt-4 pb-0">
-                                    <Button variant="outline" className="border-accent text-accent hover:bg-accent/10">
-                                        {feature.cta}
+                                    <Button asChild variant="outline" className="border-accent text-accent hover:bg-accent/10">
+                                        <a href={feature.href}>{feature.cta}</a>
                                     </Button>
                                 </CardFooter>
                             </Card>

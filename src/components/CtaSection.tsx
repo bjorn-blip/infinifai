@@ -15,23 +15,7 @@ export const CtaSection = () => {
     return (
         <section className="py-16 bg-background overflow-hidden">
             <div className="container mx-auto px-4">
-                {/* Header Section */}
-                <div className="max-w-4xl mx-auto mb-24 bg-primary/5 rounded-3xl p-8 md:p-12 text-center border border-primary/10">
-                    <div className="inline-block mb-4">
-                        <span className="text-sm font-semibold text-accent bg-accent/10 px-4 py-1.5 rounded-full">
-                            {ctaContent.badge}
-                        </span>
-                    </div>
-                    <h2 className="text-4xl font-bold tracking-tight text-foreground mb-6">
-                        {ctaContent.title}
-                    </h2>
-                    <p className="text-xl font-semibold text-foreground mb-6 max-w-2xl mx-auto leading-relaxed">
-                        {ctaContent.subtitle}
-                    </p>
-                    <p className="text-lg text-muted-foreground leading-relaxed whitespace-pre-line">
-                        {ctaContent.description}
-                    </p>
-                </div>
+
 
                 {/* Values Grid Section */}
                 <div className="mb-32">

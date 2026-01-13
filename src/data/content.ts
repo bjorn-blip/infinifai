@@ -1,4 +1,4 @@
-import { type LucideIcon, Briefcase, Brain, TrendingUp, Users, Home, Mountain, Utensils, Plane } from "lucide-react";
+import { type LucideIcon, Briefcase, Brain, TrendingUp, Users, Home, Mountain, Utensils, Plane, Target, ShieldCheck, FileText, Users2, Compass, AlertTriangle, Search, Map, Zap, Activity, Rocket } from "lucide-react";
 
 export interface NavbarContent {
     brand: string;
@@ -20,6 +20,7 @@ export interface FeatureItem {
     description: string;
     icon: LucideIcon;
     cta: string;
+    href: string;
 }
 
 export interface FeaturesSection {
@@ -68,17 +69,11 @@ export interface FooterContent {
 export interface AboutContent {
     title: string;
     subtitle: string;
+    description: string;
     downloadCvCta: string;
     downloadCvUrl: string;
     linkedinCta: string;
     linkedinUrl: string;
-    cardTitle: string;
-    quote: string;
-    stories: {
-        badge: string;
-        title: string;
-        description: string;
-    }[];
 }
 
 export interface CTAContent {
@@ -98,11 +93,27 @@ export interface CTAContent {
     ctaButton: string;
 }
 
+export interface MethodologyStep {
+    letter: string;
+    phase: string;
+    title: string;
+    description: string;
+    icon: LucideIcon;
+}
+
+export interface MethodologyContent {
+    title: string;
+    subtitle: string;
+    defineSteps: MethodologyStep[];
+    frameSteps: MethodologyStep[];
+}
+
 export const navbarContent: NavbarContent = {
     brand: "Infinif.ai",
     links: [
         { label: "Home", href: "#" },
         { label: "Diensten", href: "#services" },
+        { label: "Producten", href: "https://chat.infinif.ai" },
         { label: "Over Bjørn", href: "#about" },
         { label: "Contact", href: "#contact" },
     ],
@@ -115,7 +126,7 @@ export const heroContent: HeroProps = {
     subtitle: "Infinif.ai staat voor infinite improvement through AI: slimmer werken en continu verbeteren met de kracht van kunstmatige intelligentie. Ik help organisaties om AI écht praktisch in te zetten: niet alleen met strategisch advies, maar ook door samen de handen uit de mouwen te steken.",
     primaryCta: "Plan een kennismaking",
     secondaryCta: "Meer over Bjørn",
-    heroImage: "/bjorn-portrait.jpg",
+    heroImage: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40", // Planning/Strategy image
 };
 
 export const featuresContent: FeaturesSection = {
@@ -123,28 +134,32 @@ export const featuresContent: FeaturesSection = {
     description: "Van interim management tot AI-implementatie. Praktische oplossingen die uw bedrijf vooruit helpen in de digitale transformatie",
     items: [
         {
-            title: "Interim Marketing- & E-commerce Management",
-            description: "Tijdelijke invulling van marketing- en e-commerce posities met directe impact op groei en resultaten.",
-            icon: Briefcase,
-            cta: "Vraag offerte",
-        },
-        {
             title: "Advies & Implementatie van AI-oplossingen",
             description: "Van strategie tot uitvoering: praktische AI-implementatie die uw bedrijfsprocessen versterkt.",
             icon: Brain,
             cta: "Vraag offerte",
-        },
-        {
-            title: "Investor-ready Marketing- & businessplannen & pitch decks",
-            description: "Professionele marketingplannen voor seed en series A financieringsrondes.",
-            icon: TrendingUp,
-            cta: "Vraag offerte",
+            href: "#contact",
         },
         {
             title: "AI-trainingen & Workshops",
             description: "Praktische training en workshops over AI-toepassingen voor uw team en organisatie.",
             icon: Users,
             cta: "Vraag offerte",
+            href: "#contact",
+        },
+        {
+            title: "Interim Marketing- & E-commerce Management",
+            description: "Tijdelijke invulling van marketing- en e-commerce posities met directe impact op groei en resultaten.",
+            icon: Briefcase,
+            cta: "Vraag offerte",
+            href: "#contact",
+        },
+        {
+            title: "Investor-ready Marketing- & businessplannen & pitch decks",
+            description: "Professionele marketingplannen voor seed en series A financieringsrondes.",
+            icon: TrendingUp,
+            cta: "Vraag offerte",
+            href: "#contact",
         },
     ],
 };
@@ -174,24 +189,11 @@ export const contactContent: ContactProps = {
 export const aboutContent: AboutContent = {
     title: "Over Bjørn",
     subtitle: "Gecertificeerd AI Business Professional met 20+ jaar ervaring in digital commerce & marketing.",
+    description: "Mijn carrière is een bewuste reis langs innovatie: van directierollen bij tech-giganten als Sony en Samsung, waar ik onder andere de eerste Chromebooks in Nederland introduceerde, tot het bouwen van mijn eigen craft beer-merk. De rode draad? Altijd de vraag: hoe kan technologie ons werk écht slimmer maken?\n\nMet de opkomst van AI viel alles op zijn plek. Ik besloot me te certificeren als AI Business Professional om organisaties te helpen niet alleen over AI te praten, maar het ook echt te doen. Of je nu een startup bent die een investor-ready plan nodig heeft of een gevestigde organisatie die de AI-boot niet wil missen: ik spreek de taal van de boardroom én de werkvloer. Want ik geloof niet in technologie om de technologie, maar in impact. Laten we samen kijken hoe we jouw ambities kunnen waarmaken.",
     downloadCvCta: "Download CV",
     downloadCvUrl: "/CV_Bjorn_Jense_Infinifai.pdf",
     linkedinCta: "LinkedIn",
     linkedinUrl: "https://www.linkedin.com/in/bj%C3%B8rn-jense-991078a/",
-    cardTitle: "Strategische visie met een menselijke maat",
-    quote: "\"Of ik nu een berg afdaal op mijn ski's, een complex vijfgangendiner voorbereid of een AI-strategie uitrol voor een multinational: voor mij draait alles om de juiste techniek, focus en het resultaat waar je anderen mee verrast.\"",
-    stories: [
-        {
-            badge: "Carrière",
-            title: "Van de boardroom naar de toekomst",
-            description: "Mijn carrière is geen toevallige aaneenschakeling van functies, maar een bewuste reis langs innovatie. Na mijn Master in Consultancy begon ik in de digitale wereld toen e-commerce nog in de kinderschoenen stond. Via rollen bij tech-giganten als Sony en Samsung groeide ik van Brand Manager naar Director. Ik leerde daar hoe je complexe technologie vertaalt naar iets waar de consument echt blij van wordt, zoals de lancering van de allereerste Chromebook in Nederland.",
-        },
-        {
-            badge: "Ondernemerschap",
-            title: "Innovatie in de praktijk",
-            description: "Geïnspireerd door mijn eigen ervaring koos ik voor het avontuur van het ondernemerschap met mijn eigen craft beer-merk. Ik wilde ervaren hoe het is om vanaf nul iets op te bouwen en met je eigen voeten in de klei (of in dit geval, de hop) te staan. Deze hands-on ervaring heeft me geleerd wat het betekent om écht ondernemer te zijn: van strategie tot uitvoering, van marketing tot operations.",
-        },
-    ],
 };
 
 export const footerContent: FooterContent = {
@@ -222,11 +224,11 @@ export const footerContent: FooterContent = {
 
 export const ctaContent: CTAContent = {
     badge: "De AI-stap",
-    title: "Waarom nu?",
-    subtitle: "De rode draad in mijn loopbaan is altijd de vraag een geweest: \"Hoe kan techniek ons werk slimmer en leuker maken?\"",
-    description: "De opkomst van generatieve AI was voor mij het moment om alles samen te brengen. Ik besloot me te certificeren als AI Business Professional en met Infinif.ai mijn eigen koers te varen. Ik help nu bedrijven om niet alleen over AI te praten, maar het ook echt te doen: van investor-ready plannen tot hands-on marketing automation implementatie.",
+    title: "Mijn waarden",
+    subtitle: "Naast de data en algoritmes",
+    description: "Als de laptop dichtgaat, vind je me waarschijnlijk niet stilzittend op de bank. Deze passies houden me scherp en creatief.",
     secondTitle: "Naast de data en algoritmes",
-    secondSubtitle: "Als de laptop dichtgaat, vind je me waarschijnlijk niet stilzittend op de bank",
+    secondSubtitle: "Wat mij drijft buiten het werk",
     values: [
         {
             icon: Home,
@@ -236,7 +238,7 @@ export const ctaContent: CTAContent = {
         {
             icon: Mountain,
             title: "De Bergen in",
-            description: "Skiën is voor mij de ultieme vrijheid. De combinatie van snelheid, techniek en de buitenlucht geeft me de frisse blik die ik meeneem naar mijn werk.",
+            description: "Skiën is voor mij de ulitieme vrijheid. De combinatie van snelheid, techniek en de buitenlucht geeft me de frisse blik die ik meeneem naar mijn werk.",
         },
         {
             icon: Utensils,
@@ -249,7 +251,27 @@ export const ctaContent: CTAContent = {
             description: "Ik ben altijd nieuwsgierig naar nieuwe culturen en plekken. Die nieuwsgierigheid vertaalt zich ook naar mijn fascinatie voor AI.",
         },
     ],
-    ctaTitle: "Waarom we moeten praten",
-    ctaDescription: "Ik geloof niet in technologie om de technologie. Ik geloof in impact. Of je nu een startup bent die klaar is voor een seed-ronde of een gevestigde organisatie die de AI-boot niet wil missen: ik spreek de taal van de boardroom én de werkvloer. Laten we samen kijken hoe we jouw ambities kunnen waarmaken.",
+    ctaTitle: "Klaar voor de volgende stap?",
+    ctaDescription: "Laten we samen kijken hoe we AI voor jouw business kunnen laten werken.",
     ctaButton: "Plan een gesprek",
+};
+
+export const defineFrameContent: MethodologyContent = {
+    title: "De DEFINE - FRAME Methodologie",
+    subtitle: "Een bewezen, systeematische aanpak voor effectieve AI-adoptie en blijvende impact.",
+    defineSteps: [
+        { letter: "D", phase: "DEFINE", title: "Determine Objectives", description: "Vaststellen wat we exact willen bereiken: automatisering, content creatie of leadgeneratie.", icon: Target },
+        { letter: "E", phase: "DEFINE", title: "Establish Success Criteria", description: "Definiëren van specifieke, meetbare doelen (KPI's) zoals conversiepercentages.", icon: ShieldCheck },
+        { letter: "F", phase: "DEFINE", title: "Formulate Key Deliverables", description: "Identificeren van de tastbare resultaten van het AI-project.", icon: FileText },
+        { letter: "I", phase: "DEFINE", title: "Identify Stakeholders", description: "In kaart brengen van alle betrokkenen en hun specifieke verwachtingen.", icon: Users2 },
+        { letter: "N", phase: "DEFINE", title: "Navigate Constraints", description: "Analyseren van beperkingen in tijd, budget en beschikbare middelen.", icon: Compass },
+        { letter: "E", phase: "DEFINE", title: "Evaluate Risks", description: "Inschatten van potentiële risico's en bepalen van mitigatiestrategieën.", icon: AlertTriangle },
+    ],
+    frameSteps: [
+        { letter: "F", phase: "FRAME", title: "Feasibility Study", description: "Onderzoek naar welke bedrijfsprocessen het meest geschikt zijn voor AI-verbetering.", icon: Search },
+        { letter: "R", phase: "FRAME", title: "Roadmap Creation", description: "Ontwikkelen van een gedetailleerd plan met tijdlijn, tools en mijlpalen.", icon: Map },
+        { letter: "A", phase: "FRAME", title: "AI Implementation", description: "Uitrollen van geselecteerde AI-oplossingen, vaak startend met pilotprojecten.", icon: Zap },
+        { letter: "M", phase: "FRAME", title: "Measurement & Monitoring", description: "Prestaties bewaken op basis van KPI's en resultaten evalueren.", icon: Activity },
+        { letter: "E", phase: "FRAME", title: "Enhancement & Scalability", description: "Continu verfijnen en opschalen van AI-oplossingen binnen de organisatie.", icon: Rocket },
+    ]
 };

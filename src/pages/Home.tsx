@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { Features } from "@/components/Features";
+import { Methodology } from "@/components/Methodology";
 import { About } from "@/components/About";
 import { CtaSection } from "@/components/CtaSection";
 import { Contact } from "@/components/Contact";
@@ -13,6 +14,7 @@ export const Home = () => {
             <main>
                 <Hero />
                 <Features />
+                <Methodology />
                 <About />
                 <CtaSection />
                 <Contact />

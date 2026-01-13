@@ -65,9 +65,7 @@ export const Contact = () => {
                     <h2 className="text-4xl font-bold tracking-tight text-foreground mb-4">
                         Contact
                     </h2>
-                    <p className="text-lg text-muted-foreground">
-                        Klaar om uw AI en marketing doelen te realiseren? Laten we kennismaken en de mogelijkheden bespreken.
-                    </p>
+
                 </div>
 
                 {/* Cards Grid */}
