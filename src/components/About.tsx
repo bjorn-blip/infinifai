@@ -54,7 +54,7 @@ export const About = () => {
                                     <img
                                         src="/bjorn-portrait-v3.jpg"
                                         alt="Bjørn Jense"
-                                        className="w-full h-full object-cover scale-[1.10] origin-center transition-all duration-700"
+                                        className="w-full h-full object-cover scale-[1.15] object-[75%_center] origin-center transition-all duration-700"
                                     />
                                 </div>
                             </div>
