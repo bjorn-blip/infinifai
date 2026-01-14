@@ -24,7 +24,7 @@ export const Hero = () => {
                         navigate('/tool');
                     }}>
                         <Button size="lg" className="h-14 px-10 text-xl font-bold rounded-full hover:scale-105 transition-all shadow-xl shadow-primary/20 group">
-                            Doe Gratis AI Business Scan
+                            {t('hero.primaryCta')}
                             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </Button>
                     </a>
