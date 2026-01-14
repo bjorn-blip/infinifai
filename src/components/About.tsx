@@ -52,7 +52,7 @@ export const About = () => {
                                 <div className="absolute -inset-4 bg-gradient-to-tr from-primary/20 to-accent/20 rounded-[2.5rem] blur-2xl opacity-50 group-hover:opacity-75 transition-opacity" />
                                 <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-border/50 shadow-2xl">
                                     <img
-                                        src="/bjorn-portrait.jpg"
+                                        src="/bjorn-portrait-v2.jpg"
                                         alt="Bjørn Jense"
                                         className="w-full h-full object-cover scale-[1.05] transition-all duration-700"
                                     />
