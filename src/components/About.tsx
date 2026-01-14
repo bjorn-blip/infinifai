@@ -54,7 +54,7 @@ export const About = () => {
                                     <img
                                         src="/bjorn-portrait.jpg"
                                         alt="Bjørn Jense"
-                                        className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700"
+                                        className="w-full h-full object-cover scale-[1.05] transition-all duration-700"
                                     />
                                 </div>
                             </div>
