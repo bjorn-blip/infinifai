@@ -10,7 +10,7 @@
         "badge": "New Features Available",
         "title": "Ready to infinif.ai your business?",
         "subtitle": "Infinif.ai stands for infinite improvement through AI: working smarter and continuously improving with the power of artificial intelligence. I help organizations to put AI into practice: not just with strategic advice, but also by rolling up our sleeves together.",
-        "primaryCta": "Schedule a meeting",
+        "primaryCta": "Free AI Business Scan",
         "secondaryCta": "More about Bjørn",
         "process": {
             "step1": "Data Integration",
@@ -39,7 +39,7 @@
             "0": {
                 "title": "Advice & Implementation of AI solutions",
                 "description": "From strategy to execution: practical AI implementation that strengthens your business processes.",
-                "cta": "Request quote"
+                "cta": "Free AI Business Scan"
             },
             "1": {
                 "title": "AI Training & Workshops",
