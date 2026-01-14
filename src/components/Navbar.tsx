@@ -33,6 +33,7 @@ export const Navbar = () => {
         }
 
         if (href.startsWith('/')) {
+            e.preventDefault();
             navigate(href);
             return;
         }

@@ -1,12 +1,11 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { heroContent } from "@/data/content";
 import { Cpu, Sparkles, Brain, ArrowRight, TrendingUp } from "lucide-react";
 import { useTranslation, Trans } from 'react-i18next';
-import { useNavigate } from "react-router-dom";
 
 export const Hero = () => {
     const { t } = useTranslation();
-    const navigate = useNavigate();
     return (
         <section className="relative pt-32 pb-4 lg:pt-40 lg:pb-12 overflow-hidden">
             <div className="container mx-auto px-4 relative z-10 text-center">
@@ -19,15 +18,12 @@ export const Hero = () => {
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300">
-                    <a href="/tool" onClick={(e) => {
-                        e.preventDefault();
-                        navigate('/tool');
-                    }}>
+                    <Link to="/tool">
                         <Button size="lg" className="h-14 px-10 text-xl font-bold rounded-full hover:scale-105 transition-all shadow-xl shadow-primary/20 group">
                             {t('hero.primaryCta')}
                             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </Button>
-                    </a>
+                    </Link>
                 </div>
 
                 {/* HIGH-END INTERACTIVE PROCESS HUB */}
