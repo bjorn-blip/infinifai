@@ -113,7 +113,7 @@ export const navbarContent: NavbarContent = {
     links: [
         { label: "Home", href: "#" },
         { label: "Diensten", href: "#services" },
-        { label: "Producten", href: "https://chat.infinif.ai" },
+        // { label: "Producten", href: "https://chat.infinif.ai" },
         { label: "Over Bjørn", href: "#about" },
         { label: "Contact", href: "#contact" },
     ],
@@ -257,7 +257,7 @@ export const ctaContent: CTAContent = {
 };
 
 export const defineFrameContent: MethodologyContent = {
-    title: "De DEFINE - FRAME Methodologie",
+    title: "DEFINE - FRAME Methodologie",
     subtitle: "Een bewezen, systeematische aanpak voor effectieve AI-adoptie en blijvende impact.",
     defineSteps: [
         { letter: "D", phase: "DEFINE", title: "Determine Objectives", description: "Vaststellen wat we exact willen bereiken: automatisering, content creatie of leadgeneratie.", icon: Target },

@@ -4,10 +4,11 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { contactContent } from "@/data/content";
 import { Send, CheckCircle2, Loader2 } from "lucide-react";
+import { useTranslation } from 'react-i18next';
 
 export const Contact = () => {
+    const { t } = useTranslation();
     const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
     const [formData, setFormData] = useState({
         name: "",
@@ -73,19 +74,34 @@ export const Contact = () => {
                     {/* Business Details Card */}
                     <Card className="shadow-2xl border-border/50 backdrop-blur-sm bg-card/80">
                         <CardHeader>
-                            <CardTitle>{contactContent.sectionTitle}</CardTitle>
-                            {contactContent.sectionDescription && (
-                                <CardDescription>{contactContent.sectionDescription}</CardDescription>
-                            )}
+                            <CardTitle>{t('contact.details.title')}</CardTitle>
                         </CardHeader>
                         <CardContent>
                             <div className="space-y-6">
-                                {contactContent.details.map((detail, index) => (
-                                    <div key={index} className="flex flex-col space-y-1">
-                                        <p className="text-base font-bold text-foreground">{detail.label}</p>
-                                        <p className="text-base text-muted-foreground">{detail.value}</p>
-                                    </div>
-                                ))}
+                                <div className="flex flex-col space-y-1">
+                                    <p className="text-base font-bold text-foreground">{t('contact.details.labels.name')}</p>
+                                    <p className="text-base text-muted-foreground">Infinif.ai</p>
+                                </div>
+                                <div className="flex flex-col space-y-1">
+                                    <p className="text-base font-bold text-foreground">{t('contact.details.labels.kvk')}</p>
+                                    <p className="text-base text-muted-foreground">97606952</p>
+                                </div>
+                                <div className="flex flex-col space-y-1">
+                                    <p className="text-base font-bold text-foreground">{t('contact.details.labels.btw')}</p>
+                                    <p className="text-base text-muted-foreground">NL005278494B56</p>
+                                </div>
+                                <div className="flex flex-col space-y-1">
+                                    <p className="text-base font-bold text-foreground">{t('contact.details.labels.address')}</p>
+                                    <p className="text-base text-muted-foreground">Ericaweg 47, 1272CS Huizen</p>
+                                </div>
+                                <div className="flex flex-col space-y-1">
+                                    <p className="text-base font-bold text-foreground">{t('contact.details.labels.phone')}</p>
+                                    <p className="text-base text-muted-foreground">+31 6 1115 9651</p>
+                                </div>
+                                <div className="flex flex-col space-y-1">
+                                    <p className="text-base font-bold text-foreground">{t('contact.details.labels.email')}</p>
+                                    <p className="text-base text-muted-foreground">bjorn@infinif.ai</p>
+                                </div>
                             </div>
                         </CardContent>
                     </Card>
@@ -93,27 +109,27 @@ export const Contact = () => {
                     {/* Contact Form Card */}
                     <Card className="shadow-2xl border-border/50 backdrop-blur-sm bg-card/80">
                         <CardHeader>
-                            <CardTitle>{contactContent.formTitle}</CardTitle>
-                            <CardDescription>{contactContent.formDescription}</CardDescription>
+                            <CardTitle>{t('contact.form.title')}</CardTitle>
+                            <CardDescription>{t('contact.form.description')}</CardDescription>
                         </CardHeader>
                         <CardContent>
                             {status === "success" ? (
                                 <div className="py-12 text-center space-y-4 animate-in fade-in zoom-in duration-300">
                                     <CheckCircle2 className="w-16 h-16 text-accent mx-auto" />
-                                    <h4 className="text-2xl font-bold">Bericht verzonden!</h4>
-                                    <p className="text-muted-foreground">Bedankt voor je bericht. Ik neem zo snel mogelijk contact met je op.</p>
+                                    <h4 className="text-2xl font-bold">{t('contact.form.success.title')}</h4>
+                                    <p className="text-muted-foreground">{t('contact.form.success.description')}</p>
                                     <Button variant="outline" onClick={() => setStatus("idle")}>
-                                        Nog een bericht sturen
+                                        {t('contact.form.success.new')}
                                     </Button>
                                 </div>
                             ) : (
                                 <form onSubmit={handleSubmit} className="space-y-4">
                                     <div className="space-y-2">
-                                        <Label htmlFor="name">{contactContent.formLabels.name}</Label>
+                                        <Label htmlFor="name">{t('contact.form.inputs.name')}</Label>
                                         <Input
                                             id="name"
                                             name="name"
-                                            placeholder="Uw naam"
+                                            placeholder={t('contact.form.inputs.namePlaceholder')}
                                             value={formData.name}
                                             onChange={handleChange}
                                             required
@@ -121,12 +137,12 @@ export const Contact = () => {
                                         />
                                     </div>
                                     <div className="space-y-2">
-                                        <Label htmlFor="email">{contactContent.formLabels.email}</Label>
+                                        <Label htmlFor="email">{t('contact.form.inputs.email')}</Label>
                                         <Input
                                             id="email"
                                             name="email"
                                             type="email"
-                                            placeholder="uw@email.nl"
+                                            placeholder={t('contact.form.inputs.emailPlaceholder')}
                                             value={formData.email}
                                             onChange={handleChange}
                                             required
@@ -134,11 +150,11 @@ export const Contact = () => {
                                         />
                                     </div>
                                     <div className="space-y-2">
-                                        <Label htmlFor="message">{contactContent.formLabels.message}</Label>
+                                        <Label htmlFor="message">{t('contact.form.inputs.message')}</Label>
                                         <Textarea
                                             id="message"
                                             name="message"
-                                            placeholder="Hoe kunnen we u helpen?"
+                                            placeholder={t('contact.form.inputs.messagePlaceholder')}
                                             className="min-h-[120px]"
                                             value={formData.message}
                                             onChange={handleChange}
@@ -147,17 +163,17 @@ export const Contact = () => {
                                         />
                                     </div>
                                     {status === "error" && (
-                                        <p className="text-sm text-destructive font-medium">Er ging iets mis bij het verzenden. Probeer het later opnieuw.</p>
+                                        <p className="text-sm text-destructive font-medium">{t('contact.form.error')}</p>
                                     )}
                                     <Button type="submit" className="w-full group" disabled={status === "loading"}>
                                         {status === "loading" ? (
                                             <>
                                                 <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                                                Versturen...
+                                                {t('contact.form.inputs.sending')}
                                             </>
                                         ) : (
                                             <>
-                                                {contactContent.formLabels.submit}
+                                                {t('contact.form.inputs.submit')}
                                                 <Send className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                                             </>
                                         )}

@@ -1,0 +1,192 @@
+{
+    "navbar": {
+        "home": "Home",
+        "services": "Services",
+        "about": "About Bjørn",
+        "contact": "Contact",
+        "privacy": "Privacy & Terms"
+    },
+    "hero": {
+        "badge": "New Features Available",
+        "title": "Ready to infinif.ai your business?",
+        "subtitle": "Infinif.ai stands for infinite improvement through AI: working smarter and continuously improving with the power of artificial intelligence. I help organizations to put AI into practice: not just with strategic advice, but also by rolling up our sleeves together.",
+        "primaryCta": "Schedule a meeting",
+        "secondaryCta": "More about Bjørn",
+        "process": {
+            "step1": "Data Integration",
+            "step2": "AI Analysis",
+            "step3": "Optimization"
+        },
+        "diagram": {
+            "poweredBy": "Powered by",
+            "methodology": "DEFINE-FRAME Methodology",
+            "result": "Result",
+            "moat": "AI MOAT",
+            "moatDesc": "Sustainable competitive advantage",
+            "quote": "Build an unassailable <1>MOAT</1> around your business through continuous AI-driven process innovation.",
+            "cycle": {
+                "analyze": "Analyze",
+                "transform": "Transform",
+                "measure": "Measure",
+                "optimize": "Optimize"
+            }
+        }
+    },
+    "features": {
+        "title": "Services",
+        "description": "From interim management to AI implementation. Practical solutions that help your business move forward in digital transformation.",
+        "items": {
+            "0": {
+                "title": "Advice & Implementation of AI solutions",
+                "description": "From strategy to execution: practical AI implementation that strengthens your business processes.",
+                "cta": "Request quote"
+            },
+            "1": {
+                "title": "AI Training & Workshops",
+                "description": "Practical training and workshops on AI applications for your team and organization.",
+                "cta": "Request quote"
+            },
+            "2": {
+                "title": "Interim Marketing & E-commerce Management",
+                "description": "Temporary fulfillment of marketing and e-commerce positions with direct impact on growth and results.",
+                "cta": "Request quote"
+            },
+            "3": {
+                "title": "Investor-ready Marketing & Business Plans & Pitch Decks",
+                "description": "Professional marketing plans for seed and Series A funding rounds.",
+                "cta": "Request quote"
+            }
+        }
+    },
+    "methodology": {
+        "title": "DEFINE - FRAME Methodology",
+        "subtitle": "A proven, systematic approach for effective AI adoption and lasting impact.",
+        "phases": {
+            "define": "Phase 1: DEFINE",
+            "frame": "Phase 2: FRAME"
+        },
+        "steps": {
+            "D": {
+                "title": "Determine Objectives",
+                "description": "Determine exactly what we want to achieve: automation, content creation or lead generation."
+            },
+            "E": {
+                "title": "Establish Success Criteria",
+                "description": "Defining specific, measurable goals (KPIs) such as conversion rates."
+            },
+            "F": {
+                "title": "Formulate Key Deliverables",
+                "description": "Identifying the tangible results of the AI project."
+            },
+            "I": {
+                "title": "Identify Stakeholders",
+                "description": "Mapping all stakeholders and their specific expectations."
+            },
+            "N": {
+                "title": "Navigate Constraints",
+                "description": "Analyzing constraints in time, budget and available resources."
+            },
+            "E_risk": {
+                "title": "Evaluate Risks",
+                "description": "Estimating potential risks and determining mitigation strategies."
+            },
+            "F_frame": {
+                "title": "Feasibility Study",
+                "description": "Research into which business processes are most suitable for AI improvement."
+            },
+            "R": {
+                "title": "Roadmap Creation",
+                "description": "Developing a detailed plan with timeline, tools and milestones."
+            },
+            "A": {
+                "title": "AI Implementation",
+                "description": "Rolling out selected AI solutions, often starting with pilot projects."
+            },
+            "M": {
+                "title": "Measurement & Monitoring",
+                "description": "Monitoring performance based on KPIs and evaluating results."
+            },
+            "E_scale": {
+                "title": "Enhancement & Scalability",
+                "description": "Continuously refining and scaling AI solutions within the organization."
+            }
+        }
+    },
+    "about": {
+        "title": "About Bjørn",
+        "subtitle": "Certified AI Business Professional with 20+ years of experience in digital commerce & marketing.",
+        "description": "My career is a conscious journey along innovation: from executive roles at tech giants like Sony and Samsung, where I introduced the first Chromebooks in the Netherlands, to building my own craft beer brand. The common thread? Always the question: how can technology make our work truly smarter?\n\nWith the rise of AI, everything fell into place. I decided to certify as an AI Business Professional to help organizations not only talk about AI, but actually do it. Whether you are a startup needing an investor-ready plan or an established organization that doesn't want to miss the AI boat: I speak the language of the boardroom and the shop floor. Because I don't believe in technology for technology's sake, but in impact. Let's look together at how we can make your ambitions a reality.",
+        "cta": {
+            "cv": "Download CV",
+            "linkedin": "LinkedIn"
+        }
+    },
+    "ctaSection": {
+        "secondTitle": "My Values",
+        "secondSubtitle": "Beyond the data and algorithms",
+        "values": {
+            "0": {
+                "title": "Family Life",
+                "description": "My home base in Huizen is my most important foundation. Together with my family, I enjoy the daily dynamics that keep me sharp."
+            },
+            "1": {
+                "title": "Into the Mountains",
+                "description": "Skiing is the ultimate freedom for me. The combination of speed, technique and the outdoors gives me the fresh perspective I take to my work."
+            },
+            "2": {
+                "title": "In the Kitchen",
+                "description": "Cooking is a form of creativity for me. Just like in business, it's about the best ingredients, good timing and sometimes a little daring to experiment."
+            },
+            "3": {
+                "title": "Travel & Discovery",
+                "description": "I am always curious about new cultures and places. That curiosity also translates to my fascination for AI."
+            }
+        },
+        "main": {
+            "title": "Ready for the next step?",
+            "description": "Let's look together at how we can make AI work for your business.",
+            "button": "Schedule a meeting"
+        }
+    },
+    "contact": {
+        "title": "Contact",
+        "details": {
+            "title": "Company Details",
+            "labels": {
+                "name": "Trade Name",
+                "kvk": "COC Number",
+                "btw": "VAT Number",
+                "address": "Address",
+                "phone": "Phone",
+                "email": "Email"
+            }
+        },
+        "form": {
+            "title": "Send a message",
+            "description": "Fill in the form below to contact us.",
+            "inputs": {
+                "name": "Name",
+                "namePlaceholder": "Your name",
+                "email": "Email",
+                "emailPlaceholder": "your@email.com",
+                "message": "Message",
+                "messagePlaceholder": "How can we help you?",
+                "submit": "Send message",
+                "sending": "Sending..."
+            },
+            "success": {
+                "title": "Message sent!",
+                "description": "Thank you for your message. I will contact you as soon as possible.",
+                "new": "Send another message"
+            },
+            "error": "Something went wrong while sending. Please try again later."
+        }
+    },
+    "footer": {
+        "brand": "Infinif.ai",
+        "description": "Boutique AI & Marketing Consultancy\nCertified AI Business Professional",
+        "copyright": "© {{year}} Infinif.ai. All rights reserved.",
+        "navTitle": "Navigation",
+        "contactTitle": "Contact"
+    }
+}

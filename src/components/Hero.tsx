@@ -1,35 +1,31 @@
 import { Button } from "@/components/ui/button";
 import { heroContent } from "@/data/content";
 import { Cpu, Sparkles, Brain, ArrowRight, TrendingUp } from "lucide-react";
+import { useTranslation, Trans } from 'react-i18next';
+import { useNavigate } from "react-router-dom";
 
 export const Hero = () => {
+    const { t } = useTranslation();
+    const navigate = useNavigate();
     return (
         <section className="relative pt-32 pb-4 lg:pt-40 lg:pb-12 overflow-hidden">
             <div className="container mx-auto px-4 relative z-10 text-center">
                 <h1 className="max-w-4xl mx-auto text-4xl font-extrabold tracking-tight text-transparent sm:text-5xl md:text-7xl bg-clip-text bg-gradient-to-r from-foreground to-foreground/60 mb-8 animate-in fade-in slide-in-from-bottom-4 duration-1000">
-                    {heroContent.title}
+                    {t('hero.title')}
                 </h1>
 
                 <p className="max-w-2xl mx-auto text-xl text-muted-foreground mb-12 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200">
-                    {heroContent.subtitle}
+                    {t('hero.subtitle')}
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300">
-                    <a href="#contact" onClick={(e) => {
+                    <a href="/tool" onClick={(e) => {
                         e.preventDefault();
-                        document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        navigate('/tool');
                     }}>
                         <Button size="lg" className="h-14 px-10 text-xl font-bold rounded-full hover:scale-105 transition-all shadow-xl shadow-primary/20 group">
-                            {heroContent.primaryCta}
+                            Doe Gratis AI Business Scan
                             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                        </Button>
-                    </a>
-                    <a href="#about" onClick={(e) => {
-                        e.preventDefault();
-                        document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }}>
-                        <Button variant="outline" size="lg" className="h-14 px-10 text-xl rounded-full hover:scale-105 transition-all border-2">
-                            {heroContent.secondaryCta}
                         </Button>
                     </a>
                 </div>
@@ -43,30 +39,8 @@ export const Hero = () => {
                         {/* Main Interaction Area */}
                         <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-white/40 backdrop-blur-sm p-8 rounded-[3rem] border border-white/60 shadow-2xl animate-float">
 
-                            {/* Left Side: Process Steps (The "How") */}
-                            <div className="lg:col-span-3 space-y-4 hidden lg:block text-left">
-                                {[
-                                    { step: "01", label: "Data Integration", icon: Cpu, delay: "delay-100" },
-                                    { step: "02", label: "AI Analysis", icon: Brain, delay: "delay-300" },
-                                    { step: "03", label: "Optimization", icon: Sparkles, delay: "delay-500" },
-                                ].map((item, i) => (
-                                    <div key={i} className={`p-4 bg-white/80 rounded-2xl border border-white shadow-sm flex items-center gap-4 transition-all hover:scale-105 hover:shadow-md animate-in fade-in slide-in-from-left-4 duration-700 ${item.delay}`}>
-                                        <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
-                                            <item.icon className="w-5 h-5 text-accent" />
-                                        </div>
-                                        <div>
-                                            <p className="text-[10px] font-bold text-accent uppercase tracking-widest">{item.step}</p>
-                                            <p className="text-sm font-bold text-foreground">{item.label}</p>
-                                        </div>
-                                    </div>
-                                ))}
-                                <div className="pt-4 px-2">
-                                    <div className="h-24 w-1 border-l-2 border-dashed border-accent/30 ml-5" />
-                                </div>
-                            </div>
-
                             {/* Center: The Implementation (The "Computerscreen") */}
-                            <div className="lg:col-span-6 relative aspect-video w-full h-auto">
+                            <div className="lg:col-span-8 relative aspect-video w-full h-auto">
                                 <div className="absolute inset-0 rounded-[2.5rem] overflow-hidden border-4 border-white shadow-xl">
                                     <img
                                         src={heroContent.heroImage}
@@ -81,9 +55,9 @@ export const Hero = () => {
                                     <div className="bg-white/90 backdrop-blur-md px-4 py-2 rounded-2xl border border-accent/20 shadow-lg flex flex-col items-start gap-0.5">
                                         <div className="flex items-center gap-2">
                                             <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-                                            <span className="text-[10px] font-black text-accent uppercase tracking-widest">Powered by</span>
+                                            <span className="text-[10px] font-black text-accent uppercase tracking-widest">{t('hero.diagram.poweredBy')}</span>
                                         </div>
-                                        <span className="text-xs font-bold text-foreground">DEFINE-FRAME Methodology</span>
+                                        <span className="text-xs font-bold text-foreground">{t('hero.diagram.methodology')}</span>
                                     </div>
                                 </div>
 
@@ -96,17 +70,17 @@ export const Hero = () => {
                             </div>
 
                             {/* Right Side: The Continuous Improvement Cycle (The "Infinity") */}
-                            <div className="lg:col-span-3 h-full flex flex-col justify-center">
+                            <div className="lg:col-span-4 h-full flex flex-col justify-center">
                                 <div className="relative w-full aspect-square max-w-[280px] mx-auto">
                                     {/* The Loop background */}
                                     <div className="absolute inset-0 rounded-full border-4 border-dashed border-accent/20 animate-spin-slow" />
 
                                     {/* Cycle Steps */}
                                     {[
-                                        { label: "Analyze", icon: Brain, pos: "top-0 left-1/2 -translate-x-1/2 -translate-y-1/2" },
-                                        { label: "Transform", icon: Cpu, pos: "right-0 top-1/2 translate-x-1/2 -translate-y-1/2" },
-                                        { label: "Measure", icon: TrendingUp, pos: "bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2" },
-                                        { label: "Optimize", icon: Sparkles, pos: "left-0 top-1/2 -translate-x-1/2 -translate-y-1/2" },
+                                        { label: t("hero.diagram.cycle.analyze"), icon: Brain, pos: "top-0 left-1/2 -translate-x-1/2 -translate-y-1/2" },
+                                        { label: t("hero.diagram.cycle.transform"), icon: Cpu, pos: "right-0 top-1/2 translate-x-1/2 -translate-y-1/2" },
+                                        { label: t("hero.diagram.cycle.measure"), icon: TrendingUp, pos: "bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2" },
+                                        { label: t("hero.diagram.cycle.optimize"), icon: Sparkles, pos: "left-0 top-1/2 -translate-x-1/2 -translate-y-1/2" },
                                     ].map((step, i) => (
                                         <div key={i} className={`absolute ${step.pos} z-20 group/step`}>
                                             <div className="bg-white p-3 rounded-xl shadow-lg border border-accent/20 flex flex-col items-center gap-1 hover:scale-110 hover:border-accent transition-all">
@@ -120,19 +94,19 @@ export const Hero = () => {
 
                                     {/* Center of the Loop: The MOAT */}
                                     <div className="absolute inset-8 rounded-full bg-primary/5 flex flex-col items-center justify-center text-center p-4 border border-accent/10 shadow-inner">
-                                        <p className="text-[10px] font-bold text-accent uppercase tracking-widest mb-1">Result</p>
+                                        <p className="text-[10px] font-bold text-accent uppercase tracking-widest mb-1">{t('hero.diagram.result')}</p>
                                         <div className="relative">
-                                            <p className="text-xl font-extrabold text-foreground leading-none tracking-tighter">AI MOAT</p>
+                                            <p className="text-xl font-extrabold text-foreground leading-none tracking-tighter">{t('hero.diagram.moat')}</p>
                                             <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-accent/30 rounded-full" />
                                         </div>
-                                        <p className="text-[8px] text-muted-foreground mt-2 leading-tight font-medium">Sustainable competitive advantage</p>
+                                        <p className="text-[8px] text-muted-foreground mt-2 leading-tight font-medium">{t('hero.diagram.moatDesc')}</p>
                                     </div>
                                 </div>
 
                                 <div className="mt-12 bg-accent/5 p-4 rounded-2xl border border-accent/10 relative overflow-hidden">
                                     <div className="absolute top-0 left-0 w-1 h-full bg-accent" />
                                     <p className="text-xs text-foreground leading-relaxed font-medium">
-                                        "Bouw een onneembare <span className="text-accent font-bold">MOAT</span> rondom je business door continue AI-gedreven procesinnovatie."
+                                        "<Trans i18nKey="hero.diagram.quote" components={{ 1: <span className="text-accent font-bold" /> }} />"
                                     </p>
                                 </div>
                             </div>

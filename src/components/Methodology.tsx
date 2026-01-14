@@ -1,8 +1,28 @@
-import { defineFrameContent } from "@/data/content";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
+import { useTranslation } from 'react-i18next';
+import { Target, ShieldCheck, FileText, Users2, Compass, AlertTriangle, Search, Map, Zap, Activity, Rocket } from "lucide-react";
 
 export const Methodology = () => {
+    const { t } = useTranslation();
+
+    const defineSteps = [
+        { letter: "D", title: t('methodology.steps.D.title'), description: t('methodology.steps.D.description'), icon: Target },
+        { letter: "E", title: t('methodology.steps.E.title'), description: t('methodology.steps.E.description'), icon: ShieldCheck },
+        { letter: "F", title: t('methodology.steps.F.title'), description: t('methodology.steps.F.description'), icon: FileText },
+        { letter: "I", title: t('methodology.steps.I.title'), description: t('methodology.steps.I.description'), icon: Users2 },
+        { letter: "N", title: t('methodology.steps.N.title'), description: t('methodology.steps.N.description'), icon: Compass },
+        { letter: "E", title: t('methodology.steps.E_risk.title'), description: t('methodology.steps.E_risk.description'), icon: AlertTriangle },
+    ];
+
+    const frameSteps = [
+        { letter: "F", title: t('methodology.steps.F_frame.title'), description: t('methodology.steps.F_frame.description'), icon: Search },
+        { letter: "R", title: t('methodology.steps.R.title'), description: t('methodology.steps.R.description'), icon: Map },
+        { letter: "A", title: t('methodology.steps.A.title'), description: t('methodology.steps.A.description'), icon: Zap },
+        { letter: "M", title: t('methodology.steps.M.title'), description: t('methodology.steps.M.description'), icon: Activity },
+        { letter: "E", title: t('methodology.steps.E_scale.title'), description: t('methodology.steps.E_scale.description'), icon: Rocket },
+    ];
+
     return (
         <section id="methodology" className="py-24 bg-slate-50/50 scroll-mt-28 relative overflow-hidden">
             {/* Background Decor */}
@@ -14,10 +34,10 @@ export const Methodology = () => {
             <div className="container mx-auto px-4">
                 <div className="text-center max-w-3xl mx-auto mb-20">
                     <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground mb-6">
-                        {defineFrameContent.title}
+                        {t('methodology.title')}
                     </h2>
                     <p className="text-xl text-muted-foreground">
-                        {defineFrameContent.subtitle}
+                        {t('methodology.subtitle')}
                     </p>
                 </div>
 
@@ -26,11 +46,11 @@ export const Methodology = () => {
                     <div>
                         <div className="flex items-center gap-4 mb-10">
                             <div className="h-px flex-grow bg-gradient-to-r from-transparent to-accent/20" />
-                            <h3 className="text-2xl font-bold text-accent uppercase tracking-[0.2em]">Phase 1: DEFINE</h3>
+                            <h3 className="text-2xl font-bold text-accent uppercase tracking-[0.2em]">{t('methodology.phases.define')}</h3>
                             <div className="h-px flex-grow bg-gradient-to-l from-transparent to-accent/20" />
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {defineFrameContent.defineSteps.map((step, i) => (
+                            {defineSteps.map((step, i) => (
                                 <MethodologyCard key={i} step={step} color="accent" />
                             ))}
                         </div>
@@ -40,11 +60,11 @@ export const Methodology = () => {
                     <div>
                         <div className="flex items-center gap-4 mb-10">
                             <div className="h-px flex-grow bg-gradient-to-r from-transparent to-primary/20" />
-                            <h3 className="text-2xl font-bold text-primary uppercase tracking-[0.2em]">Phase 2: FRAME</h3>
+                            <h3 className="text-2xl font-bold text-primary uppercase tracking-[0.2em]">{t('methodology.phases.frame')}</h3>
                             <div className="h-px flex-grow bg-gradient-to-l from-transparent to-primary/20" />
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-                            {defineFrameContent.frameSteps.map((step, i) => (
+                            {frameSteps.map((step, i) => (
                                 <MethodologyCard key={i} step={step} color="primary" isFrame />
                             ))}
                         </div>
