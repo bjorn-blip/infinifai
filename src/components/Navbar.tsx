@@ -13,7 +13,6 @@ export const Navbar = () => {
     const links = [
         { label: t('navbar.home'), href: "/" },
         { label: t('navbar.services'), href: "#services" },
-        { label: "AI Business Scan", href: "/tool" },
         { label: t('navbar.contact'), href: "#contact" },
     ];
 
