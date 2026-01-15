@@ -1,9 +1,30 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 
 export const Footer = () => {
     const { t } = useTranslation();
+    const location = useLocation();
+    const navigate = useNavigate();
     const currentYear = new Date().getFullYear();
+
+    const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+        if (href.startsWith('#')) {
+            e.preventDefault();
+            if (href === '#') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                return;
+            }
+
+            if (location.pathname !== '/' && location.pathname !== '') {
+                navigate('/' + href);
+            } else {
+                const element = document.querySelector(href);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+        }
+    };
 
     return (
         <footer className="bg-primary text-white pt-12 pb-6">
@@ -19,10 +40,10 @@ export const Footer = () => {
                     <div>
                         <h4 className="font-semibold mb-3 text-white">{t('footer.navTitle')}</h4>
                         <ul className="space-y-2">
-                            <li><a href="#" className="text-sm text-gray-300 hover:text-white transition-colors">{t('navbar.home')}</a></li>
-                            <li><a href="#services" className="text-sm text-gray-300 hover:text-white transition-colors">{t('navbar.services')}</a></li>
-                            <li><a href="#about" className="text-sm text-gray-300 hover:text-white transition-colors">{t('navbar.about')}</a></li>
-                            <li><a href="#contact" className="text-sm text-gray-300 hover:text-white transition-colors">{t('navbar.contact')}</a></li>
+                            <li><a href="#" onClick={(e) => handleNavClick(e, '#')} className="text-sm text-gray-300 hover:text-white transition-colors">{t('navbar.home')}</a></li>
+                            <li><a href="#services" onClick={(e) => handleNavClick(e, '#services')} className="text-sm text-gray-300 hover:text-white transition-colors">{t('navbar.services')}</a></li>
+                            <li><a href="#about" onClick={(e) => handleNavClick(e, '#about')} className="text-sm text-gray-300 hover:text-white transition-colors">{t('navbar.about')}</a></li>
+                            <li><a href="#contact" onClick={(e) => handleNavClick(e, '#contact')} className="text-sm text-gray-300 hover:text-white transition-colors">{t('navbar.contact')}</a></li>
                         </ul>
                     </div>
 

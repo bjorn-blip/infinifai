@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { toolQuestions } from "@/data/toolQuestions";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -7,6 +8,7 @@ import { ArrowLeft, ArrowRight, CheckCircle2, RotateCcw, FileText, Download } fr
 import { Textarea } from "@/components/ui/textarea";
 
 export const Wizard = () => {
+    const navigate = useNavigate();
     const [currentPhaseIndex, setCurrentPhaseIndex] = useState(0);
     const [currentStepIndex, setCurrentStepIndex] = useState(0);
     // Updated state to hold array of strings for multi-select
@@ -189,7 +191,7 @@ export const Wizard = () => {
 
                         {/* Action Buttons (Hidden in Print) */}
                         <div className="flex flex-col sm:flex-row gap-4 justify-center print:hidden mt-12 bg-secondary/5 p-8 rounded-2xl">
-                            <Button size="lg" className="h-12 px-8 text-lg rounded-full shadow-lg shadow-primary/20" onClick={() => window.location.href = '/#contact'}>
+                            <Button size="lg" className="h-12 px-8 text-lg rounded-full shadow-lg shadow-primary/20" onClick={() => navigate('/#contact')}>
                                 Plan Appointment
                             </Button>
                             <Button variant="outline" size="lg" className="h-12 px-8 text-lg rounded-full" onClick={handlePrint}>

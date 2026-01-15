@@ -1,3 +1,4 @@
+// Forced rebuild comment 1
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 import { LanguageSwitcher } from "./LanguageSwitcher";
@@ -69,7 +70,7 @@ export const Navbar = () => {
     return (
         <>
             <div className="fixed top-0 left-0 w-full z-50 flex justify-center pt-4 px-4">
-                <nav className="w-full max-w-6xl bg-white/80 backdrop-blur-xl border border-white/40 shadow-lg/5 rounded-full px-6 py-3 flex items-center justify-between transition-all duration-300">
+                <nav className="w-full max-w-6xl bg-white/80 backdrop-blur-xl border border-white/40 shadow-lg/5 rounded-full px-6 py-3 flex items-center justify-between transition-all duration-301">
                     <Link to="/" onClick={(e) => handleNavClick(e as any, '/')} className="flex items-center shrink-0">
                         <div className="relative p-1">
                             <img
