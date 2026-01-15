@@ -2,14 +2,16 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useTranslation } from 'react-i18next';
 
+import { useState } from "react";
+import { CalendarModal } from "./CalendarModal";
+
 export const CtaSection = () => {
     const { t } = useTranslation();
+    const [isCalendarOpen, setIsCalendarOpen] = useState(false);
+
     const handleCtaClick = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
-        const element = document.querySelector('#contact');
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+        setIsCalendarOpen(true);
     };
 
     return (
@@ -42,6 +44,7 @@ export const CtaSection = () => {
                     </div>
                 </div>
             </div>
+            <CalendarModal isOpen={isCalendarOpen} onClose={() => setIsCalendarOpen(false)} />
         </section>
     );
 };
