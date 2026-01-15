@@ -182,6 +182,13 @@
             "error": "Er ging iets mis bij het verzenden. Probeer het later opnieuw."
         }
     },
+    "confirmation": {
+        "title": "Afspraak Bevestigd!",
+        "subtitle": "Bedankt voor het inplannen van een gesprek. Je ontvangt spoedig een bevestiging via e-mail met de details en de Teams/Google Meet link.",
+        "backHome": "Terug naar Home",
+        "addToCalendar": "Bekijk in Agenda",
+        "contactInfo": "Vragen voor het gesprek? Stuur gerust een bericht naar bjorn@infinif.ai"
+    },
     "footer": {
         "brand": "Infinif.ai",
         "description": "Boutique AI & Marketing Consultancy\nGecertificeerd AI Business Professional",

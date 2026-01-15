@@ -182,6 +182,13 @@
             "error": "Something went wrong while sending. Please try again later."
         }
     },
+    "confirmation": {
+        "title": "Appointment Confirmed!",
+        "subtitle": "Thank you for scheduling a meeting. You will soon receive a confirmation via email with the details and the Teams/Google Meet link.",
+        "backHome": "Back to Home",
+        "addToCalendar": "View in Calendar",
+        "contactInfo": "Questions before the meeting? Feel free to send a message to bjorn@infinif.ai"
+    },
     "footer": {
         "brand": "Infinif.ai",
         "description": "Boutique AI & Marketing Consultancy\nCertified AI Business Professional",
