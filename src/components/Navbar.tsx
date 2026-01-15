@@ -74,9 +74,9 @@ export const Navbar = () => {
                     <Link to="/" onClick={(e) => handleNavClick(e as any, '/')} className="flex items-center shrink-0">
                         <div className="relative p-1">
                             <img
-                                src="/logo-header.jpg"
+                                src="/logo.png"
                                 alt="Infinif.ai"
-                                className="h-16 w-auto object-contain mix-blend-multiply [mask-image:radial-gradient(circle,white_70%,transparent_100%)]"
+                                className="h-16 w-auto object-contain mix-blend-multiply"
                             />
                         </div>
                     </Link>
