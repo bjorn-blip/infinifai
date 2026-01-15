@@ -31,7 +31,7 @@ export const About = () => {
                             </div>
 
                             <div className="flex flex-wrap items-center gap-6 pt-6">
-                                <a href="/CV_Bjorn_Jense_Infinifai.pdf" download="CV_Bjorn_Jense_Infinifai.pdf">
+                                <a href="/CV_BjornJense_Infinifai.pdf" download="CV_BjornJense_Infinifai.pdf">
                                     <Button size="lg" className="h-12 px-8 text-md font-semibold rounded-full hover:scale-105 transition-transform shadow-lg shadow-primary/10">
                                         <Download className="w-4 h-4 mr-2" />
                                         {t('about.cta.cv')}

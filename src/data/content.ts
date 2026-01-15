@@ -191,7 +191,7 @@ export const aboutContent: AboutContent = {
     subtitle: "Gecertificeerd AI Business Professional met 20+ jaar ervaring in digital commerce & marketing.",
     description: "Mijn carrière is een bewuste reis langs innovatie: van directierollen bij tech-giganten als Sony en Samsung, waar ik onder andere de eerste Chromebooks in Nederland introduceerde, tot het bouwen van mijn eigen craft beer-merk. De rode draad? Altijd de vraag: hoe kan technologie ons werk écht slimmer maken?\n\nMet de opkomst van AI viel alles op zijn plek. Ik besloot me te certificeren als AI Business Professional om organisaties te helpen niet alleen over AI te praten, maar het ook echt te doen. Of je nu een startup bent die een investor-ready plan nodig heeft of een gevestigde organisatie die de AI-boot niet wil missen: ik spreek de taal van de boardroom én de werkvloer. Want ik geloof niet in technologie om de technologie, maar in impact. Laten we samen kijken hoe we jouw ambities kunnen waarmaken.",
     downloadCvCta: "Download CV",
-    downloadCvUrl: "/CV_Bjorn_Jense_Infinifai.pdf",
+    downloadCvUrl: "/CV_BjornJense_Infinifai.pdf",
     linkedinCta: "LinkedIn",
     linkedinUrl: "https://www.linkedin.com/in/bj%C3%B8rn-jense-991078a/",
 };

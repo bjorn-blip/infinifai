@@ -73,6 +73,11 @@ export const Features = () => {
                                         onClick={() => {
                                             if (feature.href.startsWith('/')) {
                                                 navigate(feature.href);
+                                            } else if (feature.href.startsWith('#')) {
+                                                const element = document.getElementById(feature.href.substring(1));
+                                                if (element) {
+                                                    element.scrollIntoView({ behavior: 'smooth' });
+                                                }
                                             } else {
                                                 window.location.href = feature.href;
                                             }
