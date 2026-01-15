@@ -14,13 +14,9 @@
 <body>
   <div id="root"></div>
   <!-- InfiniChat Widget -->
+  <script src="https://chat.infinif.ai/widget.js"></script>
   <script>
-    (function (w, d, s, o, f, js, fjs) {
-      w['InfiniChat'] = o; w[o] = w[o] || function () { (w[o].q = w[o].q || []).push(arguments) };
-      js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];
-      js.id = o; js.src = f; js.async = 1; fjs.parentNode.insertBefore(js, fjs);
-    }(window, document, 'script', 'infinichat', 'https://chat.infinif.ai/widget.js'));
-    infinichat('init', 'cmkcnjad7bnlj4yg9iet');
+    window.infinichat('init', 'cmkcnjad7bnlj4yg9iet');
   </script>
   <script type="module" src="/src/main.tsx"></script>
 </body>
