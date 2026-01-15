@@ -35,7 +35,7 @@ export const CtaSection = () => {
                             <Button
                                 size="lg"
                                 onClick={handleCtaClick}
-                                className="h-14 px-10 text-xl font-semibold rounded-full hover:scale-105 transition-transform bg-primary text-primary-foreground group"
+                                className="h-14 px-10 text-xl font-semibold rounded-full hover:scale-105 transition-all bg-white text-primary hover:bg-white/90 shadow-xl shadow-black/10 group"
                             >
                                 {t('ctaSection.main.button')}
                                 <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform" />
