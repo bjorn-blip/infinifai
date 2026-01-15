@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { cn } from "@/lib/utils";
 import { ArrowLeft, ArrowRight, CheckCircle2, RotateCcw, FileText, Download } from "lucide-react";
 import { Textarea } from "@/components/ui/textarea";
-import { PopupModal } from "react-calendly";
+import { X } from "lucide-react";
 
 export const Wizard = () => {
     const [currentPhaseIndex, setCurrentPhaseIndex] = useState(0);
@@ -15,7 +15,7 @@ export const Wizard = () => {
     const [qualitativeInput, setQualitativeInput] = useState("");
     const [showQualitativeStep, setShowQualitativeStep] = useState(false);
     const [isCompleted, setIsCompleted] = useState(false);
-    const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
+    const [isCalendarOpen, setIsCalendarOpen] = useState(false);
 
     const currentPhase = toolQuestions[currentPhaseIndex];
     const currentStep = currentPhase.steps[currentStepIndex];
@@ -191,7 +191,7 @@ export const Wizard = () => {
 
                         {/* Action Buttons (Hidden in Print) */}
                         <div className="flex flex-col sm:flex-row gap-4 justify-center print:hidden mt-12 bg-secondary/5 p-8 rounded-2xl">
-                            <Button size="lg" className="h-12 px-8 text-lg rounded-full shadow-lg shadow-primary/20" onClick={() => setIsCalendlyOpen(true)}>
+                            <Button size="lg" className="h-12 px-8 text-lg rounded-full shadow-lg shadow-primary/20" onClick={() => setIsCalendarOpen(true)}>
                                 Plan Appointment
                             </Button>
                             <Button variant="outline" size="lg" className="h-12 px-8 text-lg rounded-full" onClick={handlePrint}>
@@ -204,13 +204,28 @@ export const Wizard = () => {
                             </Button>
                         </div>
 
-                        {/* Calendly Modal */}
-                        <PopupModal
-                            url="https://calendly.com/bjorn-infinifai/30min"
-                            onModalClose={() => setIsCalendlyOpen(false)}
-                            open={isCalendlyOpen}
-                            rootElement={document.getElementById("root")!}
-                        />
+                        {/* Google Calendar Modal */}
+                        {isCalendarOpen && (
+                            <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-300">
+                                <div className="relative w-full max-w-4xl h-[80vh] bg-white rounded-3xl shadow-2xl overflow-hidden animate-in zoom-in duration-300">
+                                    <button
+                                        onClick={() => setIsCalendarOpen(false)}
+                                        aria-label="Sluit agenda"
+                                        className="absolute top-4 right-4 z-10 p-2 bg-secondary/80 hover:bg-secondary rounded-full transition-colors"
+                                    >
+                                        <X className="w-6 h-6" />
+                                    </button>
+                                    <iframe
+                                        src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0jlTOKGEkHRLwr7JBpLZpOx2Rz0-FJdMijoqDATRx7xIqNxzjRhTAJC8LeeCB0C3D92tYIErVI?gv=true"
+                                        title="Plan een afspraak via Google Calendar"
+                                        className="border-0"
+                                        width="100%"
+                                        height="100%"
+                                        frameBorder="0"
+                                    ></iframe>
+                                </div>
+                            </div>
+                        )}
                     </CardContent>
                 </Card>
             </div>
