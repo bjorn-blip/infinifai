@@ -76,7 +76,7 @@ export const Navbar = () => {
                             <img
                                 src="/logo.png"
                                 alt="Infinif.ai"
-                                className="h-16 w-auto object-contain mix-blend-multiply scale-[1.3] -translate-y-[2px] brightness-[1.02] contrast-[1.05] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_75%)]"
+                                className="h-16 w-auto object-contain mix-blend-multiply brightness-[1.02] contrast-[1.05] [mask-image:radial-gradient(ellipse_at_center,black_60%,transparent_100%)]"
                             />
                         </div>
                     </Link>
