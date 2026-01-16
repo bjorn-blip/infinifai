@@ -189,6 +189,12 @@
         "addToCalendar": "View in Calendar",
         "contactInfo": "Questions before the meeting? Feel free to send a message to bjorn@infinif.ai"
     },
+    "cookies": {
+        "title": "This website uses cookies",
+        "message": "We use cookies to improve your experience and for marketing purposes. By clicking \"Accept\", you consent to the use of all cookies for analytics and advertising (Google Ads, Meta, LinkedIn).",
+        "accept": "Accept",
+        "decline": "Decline"
+    },
     "footer": {
         "brand": "Infinif.ai",
         "description": "Boutique AI & Marketing Consultancy\nCertified AI Business Professional",

@@ -8,6 +8,7 @@ import { About } from "@/components/About";
 import { CtaSection } from "@/components/CtaSection";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
+import { CookieConsentBanner } from "@/components/CookieConsent";
 
 export const Home = () => {
     const { hash } = useLocation();
@@ -35,6 +36,7 @@ export const Home = () => {
                 <Contact />
             </main>
             <Footer />
+            <CookieConsentBanner />
         </div>
     );
 };

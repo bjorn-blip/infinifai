@@ -1,28 +1,19 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 
 <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/jpeg" href="/logo.jpg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
   <title>Infinif.ai</title>
+  <script>
+    // Single Page Apps for GitHub Pages
+    // https://github.com/rafgraph/spa-github-pages
+    // Store the current path and redirect to the root
+    sessionStorage.redirect = location.href;
+  </script>
+  <meta http-equiv="refresh" content="0;URL='/'">
 </head>
 
 <body>
-  <div id="root"></div>
-  <!-- InfiniChat Widget -->
-  <script>
-    (function (w, d, s, o, f, js, fjs) {
-      w['InfiniChat'] = o; w[o] = w[o] || function () { (w[o].q = w[o].q || []).push(arguments) };
-      js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];
-      js.id = o; js.src = f; js.async = 1; fjs.parentNode.insertBefore(js, fjs);
-    }(window, document, 'script', 'infinichat', 'https://chat.infinif.ai/widget.js'));
-    infinichat('init', 'cmkcnjad7bnlj4yg9iet');
-  </script>
-  <script type="module" src="/src/main.tsx"></script>
 </body>
 
 </html>

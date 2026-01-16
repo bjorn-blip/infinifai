@@ -7,6 +7,12 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Send, CheckCircle2, Loader2 } from "lucide-react";
 import { useTranslation } from 'react-i18next';
 
+declare global {
+    interface Window {
+        gtag?: (...args: any[]) => void;
+    }
+}
+
 export const Contact = () => {
     const { t } = useTranslation();
     const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -40,6 +46,23 @@ export const Contact = () => {
             if (result.success) {
                 setStatus("success");
                 setFormData({ name: "", email: "", message: "" });
+
+                // Track conversion for contact form submission
+                if (window.gtag) {
+                    window.gtag('event', 'conversion', {
+                        'send_to': 'AW-XXXXXXXXXX/CONTACT_CONVERSION_LABEL',
+                        'value': 1.0,
+                        'currency': 'EUR',
+                        'transaction_id': ''
+                    });
+
+                    // Also track as a custom event
+                    window.gtag('event', 'contact_form_submit', {
+                        'event_category': 'engagement',
+                        'event_label': 'Contact Form',
+                        'value': 1
+                    });
+                }
             } else {
                 setStatus("error");
             }

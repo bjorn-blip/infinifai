@@ -4,9 +4,35 @@ import { Button } from "@/components/ui/button";
 import { CheckCircle2, ArrowRight, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { useEffect } from "react";
+
+declare global {
+    interface Window {
+        gtag?: (...args: any[]) => void;
+    }
+}
 
 export const Confirmation = () => {
     const { t } = useTranslation();
+
+    useEffect(() => {
+        // Track conversion for appointment booking
+        if (window.gtag) {
+            window.gtag('event', 'conversion', {
+                'send_to': 'AW-XXXXXXXXXX/APPOINTMENT_CONVERSION_LABEL',
+                'value': 1.0,
+                'currency': 'EUR',
+                'transaction_id': ''
+            });
+
+            // Also track as a custom event
+            window.gtag('event', 'appointment_booked', {
+                'event_category': 'engagement',
+                'event_label': 'Google Calendar Appointment',
+                'value': 1
+            });
+        }
+    }, []);
 
     return (
         <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/20">

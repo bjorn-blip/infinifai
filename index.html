@@ -78,6 +78,36 @@
     ]
   }
   </script>
+
+  <!-- Google Consent Mode v2 -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+
+    // Default consent to denied (will be updated by cookie banner)
+    gtag('consent', 'default', {
+      'analytics_storage': 'denied',
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'wait_for_update': 500
+    });
+
+    gtag('js', new Date());
+  </script>
+
+  <!-- Google tag (gtag.js) - Replace G-XXXXXXXXXX with your actual Measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('config', 'G-XXXXXXXXXX', {
+      'send_page_view': false
+    });
+
+    // Google Ads Conversion Tracking - Replace AW-XXXXXXXXXX with your Conversion ID
+    gtag('config', 'AW-XXXXXXXXXX');
+  </script>
 </head>
 
 <body>

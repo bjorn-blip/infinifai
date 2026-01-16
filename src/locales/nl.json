@@ -189,6 +189,12 @@
         "addToCalendar": "Bekijk in Agenda",
         "contactInfo": "Vragen voor het gesprek? Stuur gerust een bericht naar bjorn@infinif.ai"
     },
+    "cookies": {
+        "title": "Deze website gebruikt cookies",
+        "message": "We gebruiken cookies om uw ervaring te verbeteren en voor marketing doeleinden. Door op \"Accepteren\" te klikken, stemt u in met het gebruik van alle cookies voor analyse en advertenties (Google Ads, Meta, LinkedIn).",
+        "accept": "Accepteren",
+        "decline": "Weigeren"
+    },
     "footer": {
         "brand": "Infinif.ai",
         "description": "Boutique AI & Marketing Consultancy\nGecertificeerd AI Business Professional",
