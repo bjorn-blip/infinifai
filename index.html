@@ -112,10 +112,13 @@
 
 <body>
   <div id="root"></div>
-  <!-- InfiniChat Widget -->
-  <script src="https://chat.infinif.ai/widget.js"></script>
-  <script>
-    window.infinichat('init', 'cmkcnjad7bnlj4yg9iet');
+  <!-- Flowise Chatbot Widget -->
+  <script type="module">
+    import Chatbot from 'https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js';
+    Chatbot.init({
+      chatflowid: 'cmkcnjad7bnlj4yg9iet',
+      apiHost: 'https://chat.infinif.ai',
+    });
   </script>
   <script type="module" src="/src/main.tsx"></script>
 </body>
