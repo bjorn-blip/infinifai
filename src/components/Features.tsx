@@ -1,8 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from 'react-i18next';
-import { Brain, Users, Briefcase, TrendingUp } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { Brain, Users, Briefcase, ShieldCheck } from "lucide-react";
 
 export const Features = () => {
     const { t } = useTranslation();
@@ -33,8 +33,8 @@ export const Features = () => {
             title: t('features.items.3.title'),
             description: t('features.items.3.description'),
             cta: t('features.items.3.cta'),
-            href: "#contact",
-            icon: TrendingUp
+            href: "https://comply.infinif.ai",
+            icon: ShieldCheck
         }
     ];
 

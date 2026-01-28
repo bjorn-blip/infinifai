@@ -10,7 +10,7 @@
         "badge": "Nieuwe Features Beschikbaar",
         "title": "Ready to infinif.ai your business?",
         "subtitle": "Infinif.ai staat voor infinite improvement through AI: slimmer werken en continu verbeteren met de kracht van kunstmatige intelligentie. Ik help organisaties om AI écht praktisch in te zetten: niet alleen met strategisch advies, maar ook door samen de handen uit de mouwen te steken.",
-        "primaryCta": "Doe Gratis AI Business Scan",
+        "primaryCta": "Check uw AI-strategie in 10 minuten",
         "secondaryCta": "Meer over Bjørn",
         "process": {
             "step1": "Data Integratie",
@@ -52,9 +52,9 @@
                 "cta": "Vraag offerte"
             },
             "3": {
-                "title": "Investor-ready Marketing- & businessplannen & pitch decks",
-                "description": "Professionele marketingplannen voor seed en series A financieringsrondes.",
-                "cta": "Vraag offerte"
+                "title": "AI Act Compliance Scan",
+                "description": "Krijg direct inzicht in uw juridische status en waarborg compliance met de EU AI Act en AVG.",
+                "cta": "Start Compliance Check"
             }
         }
     },

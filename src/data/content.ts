@@ -1,4 +1,4 @@
-import { type LucideIcon, Briefcase, Brain, TrendingUp, Users, Home, Mountain, Utensils, Plane, Target, ShieldCheck, FileText, Users2, Compass, AlertTriangle, Search, Map, Zap, Activity, Rocket } from "lucide-react";
+import { type LucideIcon, Briefcase, Brain, Users, Home, Mountain, Utensils, Plane, Target, ShieldCheck, FileText, Users2, Compass, AlertTriangle, Search, Map, Zap, Activity, Rocket } from "lucide-react";
 
 export interface NavbarContent {
     brand: string;
@@ -155,11 +155,11 @@ export const featuresContent: FeaturesSection = {
             href: "#contact",
         },
         {
-            title: "Investor-ready Marketing- & businessplannen & pitch decks",
-            description: "Professionele marketingplannen voor seed en series A financieringsrondes.",
-            icon: TrendingUp,
-            cta: "Vraag offerte",
-            href: "#contact",
+            title: "AI Act Compliance Scan",
+            description: "Krijg direct inzicht in uw juridische status en waarborg compliance met de EU AI Act en AVG.",
+            icon: ShieldCheck,
+            cta: "Start Compliance Check",
+            href: "https://comply.infinif.ai",
         },
     ],
 };

@@ -98,7 +98,7 @@ export const toolQuestions = [
                 question: "How would you rate your organization's risk tolerance for AI?",
                 options: [
                     { label: "High - We innovate fast, break things", value: "high", score: { er: 5 }, recommendation: "Aggressively pursue experimental AI applications." },
-                    { label: "Moderate - Fast follower", value: "moderate", score: { er: 4 }, recommendation: "Adopt proven technologies shortly after market validation." },
+                    { label: "Moderate - Fast follower", value: "moderate", score: { er: 4 }, recommendation: "Adopt proven technologies shortly after market check." },
                     { label: "Low - Security & Compliance first", value: "low", score: { er: 3 }, recommendation: "Focus on private, secure AI deployments and governance." },
                     { label: "Very Low - Skeptical", value: "very_low", score: { er: 1 }, recommendation: "Start with non-critical, internal-facing pilot projects." }
                 ]
@@ -117,9 +117,9 @@ export const toolQuestions = [
                 question: "Is there any idea on a potential solution yet?",
                 options: [
                     { label: "Yes, Proof of Concept completed", value: "poc", score: { ff: 5 }, recommendation: "Move from PoC to MVP." },
-                    { label: "Theoretical validation only", value: "theory", score: { ff: 3 }, recommendation: "Launch a rapid PoC to validate assumptions." },
+                    { label: "Theoretical assessment only", value: "theory", score: { ff: 3 }, recommendation: "Launch a rapid PoC to check assumptions." },
                     { label: "No, starting from scratch", value: "scratch", score: { ff: 1 }, recommendation: "Conduct a feasibility study first." },
-                    { label: "Looking for advice on this", value: "advice", score: { ff: 2 }, recommendation: "Seek expert consultation for validation." }
+                    { label: "Looking for advice on this", value: "advice", score: { ff: 2 }, recommendation: "Seek expert consultation for assessment." }
                 ]
             },
             {
