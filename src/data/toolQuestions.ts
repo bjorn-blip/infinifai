@@ -2,176 +2,156 @@ import { Target, ShieldCheck, FileText, Users2, Compass, AlertTriangle, Search, 
 
 export const toolQuestions = [
     {
-        phase: "DEFINE",
+        phaseKey: "tool.questions.define.phase",
         id: "define",
         steps: [
             {
                 id: "D",
                 letter: "D",
                 icon: Target,
-                title: "Determine Objectives",
-                question: "What is the primary business driver for implementing AI?",
+                titleKey: "tool.questions.define.D.title",
+                questionKey: "tool.questions.define.D.question",
                 options: [
-                    {
-                        label: "Cost Reduction & Efficiency",
-                        value: "efficiency",
-                        score: { d: 5 },
-                        recommendation: "Focus on automating repetitive tasks with RPA and basic scripting."
-                    },
-                    {
-                        label: "Revenue Growth & New Markets",
-                        value: "growth",
-                        score: { d: 5 },
-                        recommendation: "Explore AI for product innovation and personalized customer targeting."
-                    },
-                    {
-                        label: "Customer Experience Improvement",
-                        value: "cx",
-                        score: { d: 5 },
-                        recommendation: "Implement AI-driven chatbots and recommendation engines."
-                    },
-                    {
-                        label: "Innovation & Competitive Advantage",
-                        value: "innovation",
-                        score: { d: 5 },
-                        recommendation: "Invest in R&D and cutting-edge generative AI models."
-                    }
+                    { labelKey: "tool.questions.define.D.options.efficiency.label", value: "efficiency", recommendationKey: "tool.questions.define.D.options.efficiency.rec" },
+                    { labelKey: "tool.questions.define.D.options.growth.label", value: "growth", recommendationKey: "tool.questions.define.D.options.growth.rec" },
+                    { labelKey: "tool.questions.define.D.options.cx.label", value: "cx", recommendationKey: "tool.questions.define.D.options.cx.rec" },
+                    { labelKey: "tool.questions.define.D.options.innovation.label", value: "innovation", recommendationKey: "tool.questions.define.D.options.innovation.rec" }
                 ]
             },
             {
                 id: "E",
                 letter: "E",
                 icon: ShieldCheck,
-                title: "Establish Success Criteria",
-                question: "How will you measure the success of this initiative?",
+                titleKey: "tool.questions.define.E.title",
+                questionKey: "tool.questions.define.E.question",
                 options: [
-                    { label: "Quantitative ROI (e.g., hours saved, % growth)", value: "roi", score: { e: 5 }, recommendation: "Set up strict financial tracking and ROI dashboards." },
-                    { label: "Qualitative Feedback (e.g., employee satisfaction)", value: "qualitative", score: { e: 4 }, recommendation: "Conduct regular surveys and feedback loops with staff." },
-                    { label: "Technical Metrics (e.g., model accuracy)", value: "technical", score: { e: 3 }, recommendation: "Focus on MLLops and performance monitoring tools." },
-                    { label: "We haven't defined KPIs yet", value: "none", score: { e: 1 }, recommendation: "Start by defining baseline metrics before scaling." }
+                    { labelKey: "tool.questions.define.E.options.roi.label", value: "roi", recommendationKey: "tool.questions.define.E.options.roi.rec" },
+                    { labelKey: "tool.questions.define.E.options.qualitative.label", value: "qualitative", recommendationKey: "tool.questions.define.E.options.qualitative.rec" },
+                    { labelKey: "tool.questions.define.E.options.technical.label", value: "technical", recommendationKey: "tool.questions.define.E.options.technical.rec" },
+                    { labelKey: "tool.questions.define.E.options.none.label", value: "none", recommendationKey: "tool.questions.define.E.options.none.rec" }
                 ]
             },
             {
                 id: "F",
                 letter: "F",
                 icon: FileText,
-                title: "Formulate Deliverables",
-                question: "What is the tangible output you expect currently?",
+                titleKey: "tool.questions.define.F.title",
+                questionKey: "tool.questions.define.F.question",
                 options: [
-                    { label: "A fully autonomous AI agent", value: "agent", score: { f: 4 }, recommendation: "Develop a roadmap for agentic workflows." },
-                    { label: "A decision support dashboard", value: "dashboard", score: { f: 5 }, recommendation: "Build BI dashboards integrated with predictive models." },
-                    { label: "Process automation scripts", value: "automation", score: { f: 5 }, recommendation: "Identify high-volume, low-complexity tasks for automation." },
-                    { label: "Strategic roadmap report", value: "strategy", score: { f: 5 }, recommendation: "Engage in strategy workshops to align AI with business goals." }
+                    { labelKey: "tool.questions.define.F.options.agent.label", value: "agent", recommendationKey: "tool.questions.define.F.options.agent.rec" },
+                    { labelKey: "tool.questions.define.F.options.dashboard.label", value: "dashboard", recommendationKey: "tool.questions.define.F.options.dashboard.rec" },
+                    { labelKey: "tool.questions.define.F.options.automation.label", value: "automation", recommendationKey: "tool.questions.define.F.options.automation.rec" },
+                    { labelKey: "tool.questions.define.F.options.strategy.label", value: "strategy", recommendationKey: "tool.questions.define.F.options.strategy.rec" }
                 ]
             },
             {
                 id: "I",
                 letter: "I",
                 icon: Users2,
-                title: "Identify Stakeholders",
-                question: "Who is owning the AI budget and decision making?",
+                titleKey: "tool.questions.define.I.title",
+                questionKey: "tool.questions.define.I.question",
                 options: [
-                    { label: "C-Level / Board", value: "board", score: { i: 5 }, recommendation: "Focus on executive summaries and strategic impact." },
-                    { label: "Department Head", value: "head", score: { i: 4 }, recommendation: "Ensure alignment with departmental KPIs." },
-                    { label: "IT / Tech Team", value: "it", score: { i: 4 }, recommendation: "Ensure technical feasibility and infrastructure readiness." },
-                    { label: "Distributed across teams", value: "distributed", score: { i: 2 }, recommendation: "Centralize governance to avoid fragmented efforts." }
+                    { labelKey: "tool.questions.define.I.options.board.label", value: "board", recommendationKey: "tool.questions.define.I.options.board.rec" },
+                    { labelKey: "tool.questions.define.I.options.head.label", value: "head", recommendationKey: "tool.questions.define.I.options.head.rec" },
+                    { labelKey: "tool.questions.define.I.options.it.label", value: "it", recommendationKey: "tool.questions.define.I.options.it.rec" },
+                    { labelKey: "tool.questions.define.I.options.distributed.label", value: "distributed", recommendationKey: "tool.questions.define.I.options.distributed.rec" }
                 ]
             },
             {
                 id: "N",
                 letter: "N",
                 icon: Compass,
-                title: "Navigate Constraints",
-                question: "What is your biggest constraint right now?",
+                titleKey: "tool.questions.define.N.title",
+                questionKey: "tool.questions.define.N.question",
                 options: [
-                    { label: "Budget / Funding", value: "budget", score: { n: 3 }, recommendation: "Start with low-cost, high-impact pilot projects." },
-                    { label: "Data Availability / Quality", value: "data", score: { n: 1 }, recommendation: "Prioritize data cleaning and infrastructure projects." },
-                    { label: "Internal Skills / Talent", value: "skills", score: { n: 2 }, recommendation: "Invest in training or partner with external experts." },
-                    { label: "Legacy Systems", value: "legacy", score: { n: 2 }, recommendation: "Look for potential API wrappers or modernization strategies." }
+                    { labelKey: "tool.questions.define.N.options.budget.label", value: "budget", recommendationKey: "tool.questions.define.N.options.budget.rec" },
+                    { labelKey: "tool.questions.define.N.options.data.label", value: "data", recommendationKey: "tool.questions.define.N.options.data.rec" },
+                    { labelKey: "tool.questions.define.N.options.skills.label", value: "skills", recommendationKey: "tool.questions.define.N.options.skills.rec" },
+                    { labelKey: "tool.questions.define.N.options.legacy.label", value: "legacy", recommendationKey: "tool.questions.define.N.options.legacy.rec" }
                 ]
             },
             {
                 id: "E_risk",
                 letter: "E",
                 icon: AlertTriangle,
-                title: "Evaluate Risks",
-                question: "How would you rate your organization's risk tolerance for AI?",
+                titleKey: "tool.questions.define.E_risk.title",
+                questionKey: "tool.questions.define.E_risk.question",
                 options: [
-                    { label: "High - We innovate fast, break things", value: "high", score: { er: 5 }, recommendation: "Aggressively pursue experimental AI applications." },
-                    { label: "Moderate - Fast follower", value: "moderate", score: { er: 4 }, recommendation: "Adopt proven technologies shortly after market check." },
-                    { label: "Low - Security & Compliance first", value: "low", score: { er: 3 }, recommendation: "Focus on private, secure AI deployments and governance." },
-                    { label: "Very Low - Skeptical", value: "very_low", score: { er: 1 }, recommendation: "Start with non-critical, internal-facing pilot projects." }
+                    { labelKey: "tool.questions.define.E_risk.options.high.label", value: "high", recommendationKey: "tool.questions.define.E_risk.options.high.rec" },
+                    { labelKey: "tool.questions.define.E_risk.options.moderate.label", value: "moderate", recommendationKey: "tool.questions.define.E_risk.options.moderate.rec" },
+                    { labelKey: "tool.questions.define.E_risk.options.low.label", value: "low", recommendationKey: "tool.questions.define.E_risk.options.low.rec" },
+                    { labelKey: "tool.questions.define.E_risk.options.very_low.label", value: "very_low", recommendationKey: "tool.questions.define.E_risk.options.very_low.rec" }
                 ]
             }
         ]
     },
     {
-        phase: "FRAME",
+        phaseKey: "tool.questions.frame.phase",
         id: "frame",
         steps: [
             {
                 id: "F_frame",
                 letter: "F",
                 icon: Search,
-                title: "Feasibility Study",
-                question: "Is there any idea on a potential solution yet?",
+                titleKey: "tool.questions.frame.F_frame.title",
+                questionKey: "tool.questions.frame.F_frame.question",
                 options: [
-                    { label: "Yes, Proof of Concept completed", value: "poc", score: { ff: 5 }, recommendation: "Move from PoC to MVP." },
-                    { label: "Theoretical assessment only", value: "theory", score: { ff: 3 }, recommendation: "Launch a rapid PoC to check assumptions." },
-                    { label: "No, starting from scratch", value: "scratch", score: { ff: 1 }, recommendation: "Conduct a feasibility study first." },
-                    { label: "Looking for advice on this", value: "advice", score: { ff: 2 }, recommendation: "Seek expert consultation for assessment." }
+                    { labelKey: "tool.questions.frame.F_frame.options.poc.label", value: "poc", recommendationKey: "tool.questions.frame.F_frame.options.poc.rec" },
+                    { labelKey: "tool.questions.frame.F_frame.options.theory.label", value: "theory", recommendationKey: "tool.questions.frame.F_frame.options.theory.rec" },
+                    { labelKey: "tool.questions.frame.F_frame.options.scratch.label", value: "scratch", recommendationKey: "tool.questions.frame.F_frame.options.scratch.rec" },
+                    { labelKey: "tool.questions.frame.F_frame.options.advice.label", value: "advice", recommendationKey: "tool.questions.frame.F_frame.options.advice.rec" }
                 ]
             },
             {
                 id: "R",
                 letter: "R",
                 icon: Map,
-                title: "Roadmap Creation",
-                question: "What is your desired timeline for implementation?",
+                titleKey: "tool.questions.frame.R.title",
+                questionKey: "tool.questions.frame.R.question",
                 options: [
-                    { label: "Yesterday (ASAP)", value: "asap", score: { r: 2 }, recommendation: "Adopt ready-made solutions for speed." },
-                    { label: "1-3 Months (Sprint)", value: "sprint", score: { r: 5 }, recommendation: "Plan for an agile sprint delivery." },
-                    { label: "3-6 Months (Project)", value: "project", score: { r: 4 }, recommendation: "Structure as a formal project with milestones." },
-                    { label: "6-12 Months (Transformation)", value: "transformation", score: { r: 3 }, recommendation: "Design a phased transformation program." }
+                    { labelKey: "tool.questions.frame.R.options.asap.label", value: "asap", recommendationKey: "tool.questions.frame.R.options.asap.rec" },
+                    { labelKey: "tool.questions.frame.R.options.sprint.label", value: "sprint", recommendationKey: "tool.questions.frame.R.options.sprint.rec" },
+                    { labelKey: "tool.questions.frame.R.options.project.label", value: "project", recommendationKey: "tool.questions.frame.R.options.project.rec" },
+                    { labelKey: "tool.questions.frame.R.options.transformation.label", value: "transformation", recommendationKey: "tool.questions.frame.R.options.transformation.rec" }
                 ]
             },
             {
                 id: "A",
                 letter: "A",
                 icon: Zap,
-                title: "AI Implementation",
-                question: "Do you prefer a Build or Buy strategy?",
+                titleKey: "tool.questions.frame.A.title",
+                questionKey: "tool.questions.frame.A.question",
                 options: [
-                    { label: "Buy (Off-the-shelf SaaS)", value: "buy", score: { a: 4 }, recommendation: "Evaluate top market vendors." },
-                    { label: "Build (Custom solution)", value: "build", score: { a: 4 }, recommendation: "Setup a dedicated development team." },
-                    { label: "Hybrid (API integration)", value: "hybrid", score: { a: 5 }, recommendation: "Integrate powerful APIs into custom workflows." },
-                    { label: "Low-code / No-code", value: "lowcode", score: { a: 3 }, recommendation: "Empower business users with low-code tools." }
+                    { labelKey: "tool.questions.frame.A.options.buy.label", value: "buy", recommendationKey: "tool.questions.frame.A.options.buy.rec" },
+                    { labelKey: "tool.questions.frame.A.options.build.label", value: "build", recommendationKey: "tool.questions.frame.A.options.build.rec" },
+                    { labelKey: "tool.questions.frame.A.options.hybrid.label", value: "hybrid", recommendationKey: "tool.questions.frame.A.options.hybrid.rec" },
+                    { labelKey: "tool.questions.frame.A.options.lowcode.label", value: "lowcode", recommendationKey: "tool.questions.frame.A.options.lowcode.rec" }
                 ]
             },
             {
                 id: "M",
                 letter: "M",
                 icon: Activity,
-                title: "Measurement",
-                question: "Do you have existing data pipelines to measure performance?",
+                titleKey: "tool.questions.frame.M.title",
+                questionKey: "tool.questions.frame.M.question",
                 options: [
-                    { label: "Yes, modern data warehouse", value: "modern", score: { m: 5 }, recommendation: "Leverage existing data for real-time AI insights." },
-                    { label: "Yes, but fragmented", value: "fragmented", score: { m: 3 }, recommendation: "Consolidate data sources for better model training." },
-                    { label: "Manual reporting / Excel", value: "manual", score: { m: 2 }, recommendation: "Automate data collection pipelines." },
-                    { label: "No data infrastructure", value: "none", score: { m: 1 }, recommendation: "Build basic data infrastructure immediately." }
+                    { labelKey: "tool.questions.frame.M.options.modern.label", value: "modern", recommendationKey: "tool.questions.frame.M.options.modern.rec" },
+                    { labelKey: "tool.questions.frame.M.options.fragmented.label", value: "fragmented", recommendationKey: "tool.questions.frame.M.options.fragmented.rec" },
+                    { labelKey: "tool.questions.frame.M.options.manual.label", value: "manual", recommendationKey: "tool.questions.frame.M.options.manual.rec" },
+                    { labelKey: "tool.questions.frame.M.options.none.label", value: "none", recommendationKey: "tool.questions.frame.M.options.none.rec" }
                 ]
             },
             {
                 id: "E_scale",
                 letter: "E",
                 icon: Rocket,
-                title: "Enhancement",
-                question: "What is the long-term vision?",
+                titleKey: "tool.questions.frame.E_scale.title",
+                questionKey: "tool.questions.frame.E_scale.question",
                 options: [
-                    { label: "Scale to other departments", value: "scale", score: { es: 5 }, recommendation: "Create a Center of Excellence for scaling." },
-                    { label: "Deepen capability in one area", value: "depth", score: { es: 4 }, recommendation: "Specialize and refine the model further." },
-                    { label: "Maintain and optimize", value: "maintain", score: { es: 3 }, recommendation: "Focus on operational stability and cost optimization." },
-                    { label: "Sell / Exit strategy", value: "exit", score: { es: 2 }, recommendation: "Maximize valuation through IP assets." }
+                    { labelKey: "tool.questions.frame.E_scale.options.scale.label", value: "scale", recommendationKey: "tool.questions.frame.E_scale.options.scale.rec" },
+                    { labelKey: "tool.questions.frame.E_scale.options.depth.label", value: "depth", recommendationKey: "tool.questions.frame.E_scale.options.depth.rec" },
+                    { labelKey: "tool.questions.frame.E_scale.options.maintain.label", value: "maintain", recommendationKey: "tool.questions.frame.E_scale.options.maintain.rec" },
+                    { labelKey: "tool.questions.frame.E_scale.options.exit.label", value: "exit", recommendationKey: "tool.questions.frame.E_scale.options.exit.rec" }
                 ]
             }
         ]
