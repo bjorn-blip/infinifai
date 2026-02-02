@@ -9,7 +9,7 @@
     "hero": {
         "badge": "Nieuwe Features Beschikbaar",
         "title": "Ready to infinif.ai your business?",
-        "subtitle": "Check uw AI-strategie in 10 minuten. Infinif.ai staat voor infinite improvement through AI: slimmer werken en continu verbeteren met de kracht van kunstmatige intelligentie. Ik help organisaties om AI écht praktisch in te zetten: niet alleen met strategisch advies, maar ook door samen de handen uit de mouwen te steken.",
+        "subtitle": "Infinif.ai staat voor infinite improvement through AI: slimmer werken en continu verbeteren met de kracht van kunstmatige intelligentie. Ik help organisaties om AI écht praktisch in te zetten: niet alleen met strategisch advies, maar ook door samen de handen uit de mouwen te steken. Check uw AI-strategie in 10 minuten.",
         "primaryCta": "Doe gratis AI Business Scan",
         "secondaryCta": "Meer over Bjørn",
         "process": {
@@ -60,54 +60,54 @@
     },
     "methodology": {
         "title": "DEFINE - FRAME Methodologie",
-        "subtitle": "Een bewezen, systeematische aanpak voor effectieve AI-adoptie en blijvende impact.",
+        "subtitle": "Een systematische aanpak voor effectieve AI-adoptie en blijvende impact.",
         "phases": {
             "define": "Fase 1: DEFINE",
             "frame": "Fase 2: FRAME"
         },
         "steps": {
             "D": {
-                "title": "Doelstellingen Bepalen",
+                "title": "Determine Objectives",
                 "description": "Vaststellen wat we exact willen bereiken: automatisering, content creatie of leadgeneratie."
             },
             "E": {
-                "title": "Succescriteria Vaststellen",
+                "title": "Establish Success Criteria",
                 "description": "Definiëren van specifieke, meetbare doelen (KPI's) zoals conversiepercentages."
             },
             "F": {
-                "title": "Resultaten Formuleren",
+                "title": "Formulate Key Deliverables",
                 "description": "Identificeren van de tastbare resultaten van het AI-project."
             },
             "I": {
-                "title": "Stakeholders Identificeren",
+                "title": "Identify Stakeholders",
                 "description": "In kaart brengen van alle betrokkenen en hun specifieke verwachtingen."
             },
             "N": {
-                "title": "Beperkingen Navigeren",
+                "title": "Navigate Constraints",
                 "description": "Analyseren van beperkingen in tijd, budget en beschikbare middelen."
             },
             "E_risk": {
-                "title": "Risico's Evalueren",
+                "title": "Evaluate Risks",
                 "description": "Inschatten van potentiële risico's en bepalen van mitigatiestrategieën."
             },
             "F_frame": {
-                "title": "Haalbaarheidsstudie",
+                "title": "Feasibility Study",
                 "description": "Onderzoek naar welke bedrijfsprocessen het meest geschikt zijn voor AI-verbetering."
             },
             "R": {
-                "title": "Roadmap Creatie",
+                "title": "Roadmap Creation",
                 "description": "Ontwikkelen van een gedetailleerd plan met tijdlijn, tools en mijlpalen."
             },
             "A": {
-                "title": "AI Implementatie",
+                "title": "AI Implementation",
                 "description": "Uitrollen van geselecteerde AI-oplossingen, vaak startend met pilotprojecten."
             },
             "M": {
-                "title": "Meting & Monitoring",
+                "title": "Measurement & Monitoring",
                 "description": "Prestaties bewaken op basis van KPI's en resultaten evalueren."
             },
             "E_scale": {
-                "title": "Verbetering & Schaalbaarheid",
+                "title": "Enhancement & Scalability",
                 "description": "Continu verfijnen en opschalen van AI-oplossingen binnen de organisatie."
             }
         }
@@ -241,7 +241,7 @@
             "define": {
                 "phase": "DEFINE",
                 "D": {
-                    "title": "Doelstellingen Bepalen",
+                    "title": "Determine Objectives",
                     "question": "Wat is de belangrijkste zakelijke drijfveer voor het implementeren van AI?",
                     "options": {
                         "efficiency": {
@@ -263,7 +263,7 @@
                     }
                 },
                 "E": {
-                    "title": "Succescriteria Vaststellen",
+                    "title": "Establish Success Criteria",
                     "question": "Hoe gaat u het succes van dit initiatief meten?",
                     "options": {
                         "roi": {
@@ -285,7 +285,7 @@
                     }
                 },
                 "F": {
-                    "title": "Resultaten Formuleren",
+                    "title": "Formulate Key Deliverables",
                     "question": "Welk tastbaar resultaat verwacht u momenteel?",
                     "options": {
                         "agent": {
@@ -307,7 +307,7 @@
                     }
                 },
                 "I": {
-                    "title": "Stakeholders Identificeren",
+                    "title": "Identify Stakeholders",
                     "question": "Wie is verantwoordelijk voor het AI-budget en de besluitvorming?",
                     "options": {
                         "board": {
@@ -329,7 +329,7 @@
                     }
                 },
                 "N": {
-                    "title": "Beperkingen Navigeren",
+                    "title": "Navigate Constraints",
                     "question": "Wat is momenteel uw grootste beperking?",
                     "options": {
                         "budget": {
@@ -351,7 +351,7 @@
                     }
                 },
                 "E_risk": {
-                    "title": "Risico's Evalueren",
+                    "title": "Evaluate Risks",
                     "question": "Hoe zou u de risicotolerantie van uw organisatie voor AI beoordelen?",
                     "options": {
                         "high": {
@@ -376,7 +376,7 @@
             "frame": {
                 "phase": "FRAME",
                 "F_frame": {
-                    "title": "Haalbaarheidsstudie",
+                    "title": "Feasibility Study",
                     "question": "Is er al een idee voor een mogelijke oplossing?",
                     "options": {
                         "poc": {
@@ -398,7 +398,7 @@
                     }
                 },
                 "R": {
-                    "title": "Roadmap Creatie",
+                    "title": "Roadmap Creation",
                     "question": "Wat is uw gewenste tijdlijn voor implementatie?",
                     "options": {
                         "asap": {
@@ -420,7 +420,7 @@
                     }
                 },
                 "A": {
-                    "title": "AI Implementatie",
+                    "title": "AI Implementation",
                     "question": "Geeft u de voorkeur aan een 'Build' of 'Buy' strategie?",
                     "options": {
                         "buy": {
@@ -442,7 +442,7 @@
                     }
                 },
                 "M": {
-                    "title": "Meting",
+                    "title": "Measurement & Monitoring",
                     "question": "Heeft u bestaande datapijplijnen om prestaties te meten?",
                     "options": {
                         "modern": {
@@ -464,7 +464,7 @@
                     }
                 },
                 "E_scale": {
-                    "title": "Verbetering",
+                    "title": "Enhancement & Scalability",
                     "question": "Wat is de langetermijnvisie?",
                     "options": {
                         "scale": {

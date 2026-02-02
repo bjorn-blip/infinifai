@@ -123,8 +123,8 @@ export const navbarContent: NavbarContent = {
 export const heroContent: HeroProps = {
     badge: "New Features Available",
     title: "Ready to infinif.ai your business?",
-    subtitle: "Infinif.ai staat voor infinite improvement through AI: slimmer werken en continu verbeteren met de kracht van kunstmatige intelligentie. Ik help organisaties om AI écht praktisch in te zetten: niet alleen met strategisch advies, maar ook door samen de handen uit de mouwen te steken.",
-    primaryCta: "Plan een kennismaking",
+    subtitle: "Infinif.ai staat voor infinite improvement through AI: slimmer werken en continu verbeteren met de kracht van kunstmatige intelligentie. Ik help organisaties om AI écht praktisch in te zetten: niet alleen met strategisch advies, maar ook door samen de handen uit de mouwen te steken. Check uw AI-strategie in 10 minuten.",
+    primaryCta: "Doe gratis AI Business Scan",
     secondaryCta: "Meer over Bjørn",
     heroImage: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40", // Planning/Strategy image
 };
@@ -137,7 +137,7 @@ export const featuresContent: FeaturesSection = {
             title: "Advies & Implementatie van AI-oplossingen",
             description: "Van strategie tot uitvoering: praktische AI-implementatie die uw bedrijfsprocessen versterkt.",
             icon: Brain,
-            cta: "Vraag offerte",
+            cta: "Doe Gratis AI Business Scan",
             href: "#contact",
         },
         {
