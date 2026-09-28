@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Foxway Benelux Academy</title>
+  <meta name="description" content="Daily, gamified training on the refurbished & circular tech industry, Foxway and the Benelux market.">
+  <meta name="theme-color" content="#0B1B2B">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
+  <link rel="apple-touch-icon" href="assets/icon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <a href="#/home" class="brand">
+        <svg class="logo-mark" width="34" height="34" viewBox="0 0 40 40" aria-hidden="true"><path d="M4 3 L14.5 12.5 H25.5 L36 3 L35 21 L20 37 L5 21 Z" fill="var(--brand)"/><path d="M11 21 L20 33 L29 21 L20 25.5 Z" fill="#fff"/><circle cx="14.5" cy="18" r="1.8" fill="var(--ink)"/><circle cx="25.5" cy="18" r="1.8" fill="var(--ink)"/><path d="M18.3 30 L20 32.2 L21.7 30 Z" fill="var(--ink)"/></svg>
+        <div><div class="brand-word">foxway</div><div class="brand-sub">Benelux Academy</div></div>
+      </a>
+      <nav id="sidenav" class="sidenav" aria-label="Main"></nav>
+      <div class="sidebar-foot">Refurbished · Circular tech · NL · BE · LU</div>
+    </aside>
+    <main class="main">
+      <header class="topbar">
+        <a href="#/home" class="brand brand-mobile">
+          <svg class="logo-mark" width="28" height="28" viewBox="0 0 40 40" aria-hidden="true"><path d="M4 3 L14.5 12.5 H25.5 L36 3 L35 21 L20 37 L5 21 Z" fill="var(--brand)"/><path d="M11 21 L20 33 L29 21 L20 25.5 Z" fill="#fff"/><circle cx="14.5" cy="18" r="1.8" fill="var(--ink)"/><circle cx="25.5" cy="18" r="1.8" fill="var(--ink)"/></svg>
+          <span class="brand-word">foxway</span>
+        </a>
+        <div id="topstats" class="topstats"></div>
+      </header>
+      <div id="view" class="view" aria-live="polite"></div>
+    </main>
+    <nav id="bottomnav" class="bottomnav" aria-label="Main"></nav>
+  </div>
+  <div id="toasts" class="toasts" aria-live="polite"></div>
+  <canvas id="confetti" class="confetti"></canvas>
+  <noscript><p style="padding:24px">Foxway Benelux Academy needs JavaScript enabled.</p></noscript>
+
+  <!-- Content (edit these files to extend the curriculum) -->
+  <script src="content/modules.js"></script>
+  <script src="content/lessons-industry-1.js"></script>
+  <script src="content/lessons-industry-2.js"></script>
+  <script src="content/lessons-benelux.js"></script>
+  <script src="content/lessons-commercial.js"></script>
+  <script src="content/scenarios.js"></script>
+  <script src="content/glossary.js"></script>
+  <script src="content/generators.js"></script>
+  <script src="content/facts.js"></script>
+  <!-- Engine -->
+  <script src="assets/core.js"></script>
+  <script src="assets/ui.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
