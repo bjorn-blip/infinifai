@@ -130,18 +130,53 @@
   };
   UI.bar = (pct, color) => `<div class="bar"><div class="bar-fill" style="width:${U.clamp(pct, 0, 100)}%;${color ? `background:${color}` : ""}"></div></div>`;
 
+  /* Embedded in a frame (e.g. a hosted viewer): no native dialogs, downloads or print. */
+  UI.framed = (() => { try { return window.self !== window.top; } catch (e) { return true; } })();
+
+  /* In-page modal. Resolves true on confirm, false on cancel. */
+  UI.modal = function ({ title, text, body, ok, cancel, danger }) {
+    return new Promise(resolve => {
+      const wrap = document.createElement("div");
+      wrap.className = "modal-back";
+      wrap.innerHTML = `<div class="modal card" role="dialog" aria-modal="true" aria-labelledby="mdT">
+        <h2 id="mdT">${U.esc(title)}</h2>${text ? `<p class="muted">${U.esc(text)}</p>` : ""}${body || ""}
+        <div class="row-actions">${cancel === null ? "" : `<button class="btn btn-ghost" data-r="0">${U.esc(cancel || "Cancel")}</button>`}<button class="btn ${danger ? "btn-danger" : "btn-primary"}" data-r="1">${U.esc(ok || "OK")}</button></div></div>`;
+      document.body.appendChild(wrap);
+      const close = r => { wrap.remove(); document.removeEventListener("keydown", key); resolve(r); };
+      const key = e => { if (e.key === "Escape") close(false); };
+      document.addEventListener("keydown", key);
+      wrap.addEventListener("click", e => { if (e.target === wrap) close(false); const b = e.target.closest("[data-r]"); if (b) close(b.dataset.r === "1"); });
+      const okBtn = wrap.querySelector('[data-r="1"]'); if (okBtn) okBtn.focus();
+    });
+  };
+  UI.ask = (title, text, ok, danger) => UI.modal({ title, text, ok: ok || "Yes", danger });
+
   UI.download = function (filename, text, mime) {
+    if (UI.framed) {
+      // Downloads are blocked inside a frame: show the content so it can be copied instead.
+      UI.modal({ title: "Copy this text", text: `Save it as a file named ${filename} on your device.`, body: `<textarea id="mdText" rows="8" readonly class="mono">${U.esc(text)}</textarea><button class="btn btn-ghost" id="mdCopy">Copy to clipboard</button>`, ok: "Done", cancel: null });
+      const ta = document.getElementById("mdText"), cp = document.getElementById("mdCopy");
+      cp.onclick = () => UI.copy(text, ta);
+      ta.onfocus = () => ta.select();
+      return;
+    }
     const blob = new Blob([text], { type: mime || "application/json" });
     const a = document.createElement("a");
     a.href = URL.createObjectURL(blob); a.download = filename;
     document.body.appendChild(a); a.click();
     setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 500);
   };
-  UI.copy = function (text) {
+  UI.copy = function (text, selectEl) {
     const done = () => UI.toast({ icon: "copy", title: "Copied to clipboard" });
     if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(done, () => fallback());
     else fallback();
-    function fallback() { const ta = document.createElement("textarea"); ta.value = text; document.body.appendChild(ta); ta.select(); try { document.execCommand("copy"); done(); } catch (e) { prompt("Copy this:", text); } ta.remove(); }
+    function fallback() {
+      if (selectEl) { selectEl.focus(); selectEl.select(); UI.toast({ icon: "copy", title: "Text selected", text: "Press Ctrl+C / Copy to copy it." }); return; }
+      const ta = document.createElement("textarea"); ta.value = text; document.body.appendChild(ta); ta.select();
+      let ok = false; try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+      ta.remove();
+      if (ok) done(); else UI.modal({ title: "Copy this text", body: `<textarea rows="5" readonly class="mono" onfocus="this.select()">${U.esc(text)}</textarea>`, ok: "Done", cancel: null });
+    }
   };
   UI.readFile = function (accept, cb) {
     const inp = document.createElement("input");

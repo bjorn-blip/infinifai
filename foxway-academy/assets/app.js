@@ -366,8 +366,9 @@
     const n = document.getElementById("qNext"); if (n) { n.onclick = nextQuiz; n.focus(); }
     const e = document.getElementById("qEnd"); if (e) e.onclick = finishQuiz;
     document.getElementById("qExit").onclick = () => {
-      if (s.answers.length && !confirm("Leave this session? Progress on answered questions is saved.")) return;
-      FXA.save(); go(s.mode === "daily" ? "#/home" : "#/practice");
+      const leave = () => { FXA.save(); go(s.mode === "daily" ? "#/home" : "#/practice"); };
+      if (!s.answers.length) return leave();
+      UI.ask("Leave this session?", "Your answers so far are saved.", "Leave").then(ok => { if (ok) leave(); });
     };
   }
   function answerQuiz(i) {
@@ -670,7 +671,7 @@
   function renderCertificate() {
     const p = FXA.profile();
     if (!p.certified) return go("#/exam");
-    view().innerHTML = `<div class="row-actions no-print" style="justify-content:flex-end"><button class="btn btn-ghost" onclick="window.print()">${I("print")} Print / Save as PDF</button></div>
+    view().innerHTML = `${UI.framed ? "" : `<div class="row-actions no-print" style="justify-content:flex-end"><button class="btn btn-ghost" onclick="window.print()">${I("print")} Print / Save as PDF</button></div>`}
       <div class="certificate">
         <div class="cert-brand">${UI.logo(56)}<div><div class="brand-word">foxway</div><div class="brand-sub">Benelux Academy</div></div></div>
         <div class="cert-eyebrow">Certificate of completion</div>
@@ -749,8 +750,10 @@
     };
     view().querySelectorAll("[data-rm]").forEach(b => (b.onclick = () => { FXA.state.team = FXA.state.team.filter(t => t.n !== b.dataset.rm); FXA.save(); renderTeam(); }));
     view().querySelectorAll("[data-del]").forEach(b => (b.onclick = () => {
-      if (!confirm("Delete this team lesson from this browser?")) return;
-      FXA.state.custom.lessons = FXA.state.custom.lessons.filter(l => l.id !== b.dataset.del); FXA.save(); FXA.buildIndex(); renderTeam();
+      UI.ask("Delete this team lesson?", "It is removed from this browser only.", "Delete", true).then(ok => {
+        if (!ok) return;
+        FXA.state.custom.lessons = FXA.state.custom.lessons.filter(l => l.id !== b.dataset.del); FXA.save(); FXA.buildIndex(); renderTeam();
+      });
     }));
     document.getElementById("addLesson").onclick = () => lessonEditor(p);
     document.getElementById("expPack").onclick = () => {
@@ -837,7 +840,7 @@
         <label class="check"><input type="checkbox" name="sound" ${p.settings.sound ? "checked" : ""}> Sound effects</label>
         <button class="btn btn-primary" type="submit">${I("check")} Save</button>
       </form>
-      <div class="card"><div class="card-head">${I("bell")}<h3>Daily reminder</h3></div>
+      <div class="card" ${UI.framed ? "hidden" : ""}><div class="card-head">${I("bell")}<h3>Daily reminder</h3></div>
         <p class="muted">Add a recurring daily event to your Outlook/Google calendar so you never break your streak.</p>
         <div class="row-actions"><input type="time" id="remT" value="08:45" class="inline-input"><button class="btn btn-ghost" id="remBtn">${I("calendar")} Download calendar reminder (.ics)</button></div></div>
       <div class="card"><div class="card-head">${I("download")}<h3>Backup & devices</h3></div>
@@ -867,21 +870,25 @@
       try {
         const o = JSON.parse(txt);
         if (o.type !== "fxa-backup" || !o.profile || !o.profile.id || typeof o.profile.xp !== "number") throw new Error("bad");
-        if (!confirm(`Restore "${o.profile.name}" (${o.profile.xp} XP)? This replaces that profile on this device.`)) return;
-        FXA.state.profiles[o.profile.id] = o.profile;
-        FXA.state.activeProfile = o.profile.id;
-        if (Array.isArray(o.team)) FXA.state.team = o.team;
-        if (o.custom && Array.isArray(o.custom.lessons)) FXA.state.custom = o.custom;
-        FXA.save(); FXA.buildIndex(); UI.toast({ icon: "check", title: "Backup restored" }); go("#/home");
+        UI.ask(`Restore "${o.profile.name}"?`, `${o.profile.xp} XP. This replaces that profile on this device.`, "Restore").then(ok => {
+          if (!ok) return;
+          FXA.state.profiles[o.profile.id] = o.profile;
+          FXA.state.activeProfile = o.profile.id;
+          if (Array.isArray(o.team)) FXA.state.team = o.team;
+          if (o.custom && Array.isArray(o.custom.lessons)) FXA.state.custom = o.custom;
+          FXA.save(); FXA.buildIndex(); UI.toast({ icon: "check", title: "Backup restored" }); go("#/home");
+        });
       } catch (e) { UI.toast({ icon: "x", title: "Could not restore", text: "Not a valid backup file." }); }
     });
     view().querySelectorAll("[data-switch]").forEach(b => (b.onclick = () => { FXA.state.activeProfile = b.dataset.switch; FXA.save(); go("#/home"); }));
     document.getElementById("newProf").onclick = () => { FXA.state.activeProfile = null; FXA.save(); go("#/home"); };
     document.getElementById("reset").onclick = () => {
-      if (!confirm(`Delete all progress for ${p.name}? This cannot be undone.`)) return;
-      delete FXA.state.profiles[p.id];
-      FXA.state.activeProfile = Object.keys(FXA.state.profiles)[0] || null;
-      FXA.save(); go("#/home");
+      UI.ask(`Delete all progress for ${p.name}?`, "This cannot be undone.", "Delete", true).then(ok => {
+        if (!ok) return;
+        delete FXA.state.profiles[p.id];
+        FXA.state.activeProfile = Object.keys(FXA.state.profiles)[0] || null;
+        FXA.save(); go("#/home");
+      });
     };
   }
 
@@ -908,6 +915,6 @@
   document.addEventListener("DOMContentLoaded", () => {
     if (!FXA.storageOK()) UI.toast({ icon: "x", title: "Storage unavailable", text: "Progress can't be saved in this browser mode (e.g. private window)." });
     route();
-    if ("serviceWorker" in navigator && /^https?:/.test(location.protocol)) navigator.serviceWorker.register("sw.js").catch(() => {});
+    if (!UI.framed && "serviceWorker" in navigator && /^https?:/.test(location.protocol)) navigator.serviceWorker.register("sw.js").catch(() => {});
   });
 })();
